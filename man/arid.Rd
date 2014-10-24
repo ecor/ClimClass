@@ -1,0 +1,104 @@
+\name{arid}
+\alias{arid}
+\title{Aridity indices}
+\usage{
+arid(clim_norm, coeff_Hargr = NULL, monthly = FALSE, indices = 1:6)
+}
+\arguments{
+  \item{clim_norm}{climatic normals}
+
+  \item{coeff_Hargr}{mean monthly solar radiation; used
+  only for Thornthwaite's annual index Im. Default is NULL}
+
+  \item{monthly}{logic. Sets calculation to the monthly
+  mode if TRUE. Default is FALSE.}
+
+  \item{indices}{set of aridity indices to be listed.
+  Default is all indices (1 to 6 for annual, 1 to 2 for
+  monthly).}
+}
+\value{
+Either a single-line data frame (when \code{monthly} =
+FALSE) with the desired aridity index(es), or a data frame
+(monthly = TRUE), with monthly values of the desired
+index(es).
+}
+\description{
+Calculates aridity according to several indices.
+}
+\details{
+\code{clim_norm} is a monthly data frame of climate
+normals, with column names: "P", "Tn", "Tx", "Tm"
+(precipitation, minimum, maximum and mean temperature,
+respectively). It can be the output of function
+\code{\link{climate}}.
+
+\code{coeff_Hargr} corresponds to the mean monthly
+extra-atmospheric radiation (see function ExAtRa). It is
+needed only by Thornthwaite's annual index Im.
+
+When \code{monthly} is TRUE, a data frame with monthly
+detail is generated for one station, instead of a synthetic
+single-line data frame.
+
+\code{indices}' values are the following:
+
+1 De Martonne - Ia (annual or monthly). De Martonne, 1925.
+
+2 Thornthwaite - Im (annual or monthly). Thornthwaite,
+1948.
+
+3 Emberger - Q (annual only). Emberger, 1955.
+
+4 Lang - R (annual only). Lang, R., 1920.
+
+5 Rivas-Martinez - Io (annual only). Rivas - Martinez,
+website
+http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+
+6 UNEP - Ai (annual only). UNEP, 1997.
+
+A reference for the aridity degree for any index is given
+in the list object \code{arid_ind_tables} (see
+\code{\link{Trent_climate}}.
+}
+\examples{
+data(Trent_climate)
+# clima_81_10 is a list of data frames having climatic means of temperature and precipitation as
+# required by the aridity indices algorithms, each one referring to one station. It can be the output
+# of function climate.
+# coeff_Hargr is a monthly vector of average daily extra-atmospheric solar radiation, calculated e.g. by function ExAtRa.
+
+aridity_Y<-lapply(clima_81_10, coeff_Hargr=coeff_Hargr, FUN=arid, monthly=FALSE, indices=c(1,2,5))
+}
+\author{
+Emanuele Eccel
+}
+\references{
+De Martonne E., 1925: Traite de Geographie Physique: 3
+tomes, Paris.
+
+Emberger, L., 1955. Une classification biog?ographique des
+climats. Receuil des travaux des laboratoires de botanique,
+g?ologie et zoologie de la facult? des sciences de
+l'universit? de Montpellier (S?rie Botanique), Fascicule 7,
+3-43.
+
+Lang, R., 1920. Verwitterung und Bodenbildung als
+Einf?hrung in die Bodenkunde. Schweizerbart Science
+Publishers, Stuttgart
+
+Rivas-Martinez -
+http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+
+Thornthwaite, C. W., 1948: An Approach toward a Rational
+Classification of Climate. Geographical Review, Vol. 38,
+No. 1(Jan.):55-94.
+
+UNEP (United Nations Environment Programme), 1997. World
+atlas of desertification 2ED. UNEP, London.
+}
+\seealso{
+\code{\link{climate}}, \code{\link{ExAtRa}}
+}
+

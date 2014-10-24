@@ -1,0 +1,14 @@
+Package: ClimClass
+Type: Package
+Title: Climate Classification according to several indices
+Version: 1.0
+Date: 2014-10-13
+Author: Emanuele Eccel, Emanuele Cordano, Giambattista Toller
+Maintainer: Emanuele Eccel <emanuele.eccel@fmach.it>
+Depends:
+    geosphere
+Description: Classification of climate according to Koeppen - Geiger, of
+    aridity indices, of continentality indices, and of water balance after
+    Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen,
+    Walter-Lieth.
+License: GPL (>= 2)
