@@ -52,7 +52,6 @@ NULL
 #' Trewartha, G.T. and Lyle, H.H., 1980: An Introduction to Climate. MacGraw - Hill, 5th Ed. Appendix: Koeppen's Classification of Climates.
 #'
 #' @examples
-#' 
 #' data(Trent_climate)
 #' # clima_81_10 is a list of data frames having climatic means of temperature and precipitation as 
 #' # required by Koeppen - Geiger classification, each one referring to one station. It can be the output 
@@ -65,6 +64,8 @@ NULL
 koeppen_geiger<-function(clim_norm, A_B_C_special_sub.classes =FALSE)
 {
   # calculation of relevant indices for classification
+  if(sum(is.na(clim_norm$Tm)) > 0 | sum(is.na(clim_norm$P)) >0) print ("12 monthly values of temp. and prec. required!", quote=F) else
+  {
   T_warm_month<-max(clim_norm$Tm)
   T_cold_month<-min(clim_norm$Tm)
   T_avg<-mean(clim_norm$Tm)
@@ -207,5 +208,5 @@ koeppen_geiger<-function(clim_norm, A_B_C_special_sub.classes =FALSE)
   matr_climate<-data.frame(matr_indices, matr_climate)
   
   return(matr_climate)
-  
+  }
 }
