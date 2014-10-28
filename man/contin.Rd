@@ -84,20 +84,20 @@ Union, Volume 27, Issue 5, p. 663-664.
 
 Gams, H., 1932. Die klimatische Begrenzung von
 Pflanzenarealen und die Verteilung der hygrischen
-Kontinentalität in den Alpen. Zeitschr. Ges. Erdkunde,
+Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde,
 Berlin.
 
-Gorczynski, L. (1920) : Sur le calcul du degré de
+Gorczynski, L. (1920) : Sur le calcul du degre de
 continentalisme et son application dans la climatologie.
 Geografiska Annaler 2, 324-331.
 
-Lebourgeoise, F., 2010: Cours de bioclimatologie à l'usage
-des forestiers. Département SIAFEE, UFR Forêts, Arbres et
+Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage
+des forestiers. Departement SIAFEE, UFR Forets, Arbres et
 Milieux Naturels. ENGREF, Nancy Cedex.
 
 Michalet, R., and Souchier, B., 1991: Une approche
-synthétique biopédoclimatique del montagnes
-méditerranéennes: l'exemple du Maroc septemptrional.
+synthetique biopedoclimatique del montagnes
+mediterraneennes: l'exemple du Maroc septemptrional.
 Thesis, Univ. J. Fourier, Grenoble, 273 pp.
 
 Rivas-Martinez: http://www.globalbioclimatics.org/.

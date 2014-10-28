@@ -47,25 +47,25 @@ Maintainer: Emanuele Eccel  <emanuele.eccel@fmach.it>
 \references{
 Allen, R.G., Walter, I.A., Elliott, R.L., Howell, T.A., Itenfisu, D., Jensen, M.E., and Snyder, R.L. (eds.), 2005: ASCE Standardized Reference Evapotranspiration Equation. 216 pp.
 
-Bagnouls, F., and Gaussen, H., 1953: Saison s\'{e}che et indice x\'{e}rothermique. Docum. pour les Cartes des Prod. V\'{e}g\'{e}t. S\'{e}rie: G\'{e}n\'{e}ralit\'{e}, 1 (1953), pp. 1-49
+Bagnouls, F., and Gaussen, H., 1953: Saison seche et indice xerothermique. Docum. pour les Cartes des Prod. Veget. Serie: Generalite, 1 (1953), pp. 1-49.
 
 Conrad, V. 1946: Usual formulas of continentality and their limits of validity. Transactions, American Geophysical Union, Volume 27, Issue 5, p. 663-664
 
 De Martonne E., 1925: Traite de Geographie Physique: 3 tomes, Paris.
 
-Emberger, L., 1955. Une classification biogéographique des climats. Receuil des travaux des laboratoires de botanique, géologie et zoologie de la faculté des sciences de l'université de Montpellier (Série Botanique), Fascicule 7, 3-43.
+Emberger, L., 1955. Une classification biogeographique des climats. Receuil des travaux des laboratoires de botanique, geologie et zoologie de la faculte des sciences de l'universite de Montpellier (Serie Botanique), Fascicule 7, 3-43.
 
-Gams, H., 1932. Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalität in den Alpen. Zeitschr. Ges. Erdkunde, Berlin. 
+Gams, H., 1932. Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin. 
 
-Gorczynski, L. (1920) : Sur le calcul du degré de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
+Gorczynski, L. (1920) : Sur le calcul du degre de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
 
-Lang, R., 1920. Verwitterung und Bodenbildung als Einführung in die Bodenkunde. Schweizerbart Science Publishers, Stuttgart
+Lang, R., 1920. Verwitterung und Bodenbildung als Einfuehrung in die Bodenkunde. Schweizerbart Science Publishers, Stuttgart
 
-Lebourgeoise, F., 2010: Cours de bioclimatologie à l'usage des forestiers. Département SIAFEE, UFR Forêts, Arbres et Milieux Naturels. ENGREF, Nancy Cedex.
+Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage des forestiers. Departement SIAFEE, UFR Forets, Arbres et Milieux Naturels. ENGREF, Nancy Cedex.
 
 Lieth, H., Berlekamp, J., Fuest, S., and Riediger, S.: Walter-Lieth: Climate Diagram World Atlas, CD-Series I of Climate and Biosphere, 1st edit.
 
-Michalet, R., and Souchier, B., 1991: Une approche synthétique biopédoclimatique del montagnes méditerranéennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
+Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique del montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
 
 Rivas-Martinez: http://www.globalbioclimatics.org/
 

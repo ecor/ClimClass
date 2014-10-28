@@ -78,14 +78,14 @@ Emanuele Eccel
 De Martonne E., 1925: Traite de Geographie Physique: 3
 tomes, Paris.
 
-Emberger, L., 1955. Une classification biog?ographique des
+Emberger, L., 1955. Une classification biogeographique des
 climats. Receuil des travaux des laboratoires de botanique,
-g?ologie et zoologie de la facult? des sciences de
-l'universit? de Montpellier (S?rie Botanique), Fascicule 7,
+geologie et zoologie de la faculte des sciences de
+l'universite de Montpellier (Serie Botanique), Fascicule 7,
 3-43.
 
 Lang, R., 1920. Verwitterung und Bodenbildung als
-Einf?hrung in die Bodenkunde. Schweizerbart Science
+Einfuehrung in die Bodenkunde. Schweizerbart Science
 Publishers, Stuttgart
 
 Rivas-Martinez -

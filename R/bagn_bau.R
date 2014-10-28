@@ -1,6 +1,7 @@
 NULL
 #' @description Plots Bagnouls - Gaussen climatic charts of precipitation and temperature. Conventionally, in this chart the scale of precipitation has a double extension with respect to the scale of temperature (Bagnouls and Gaussen, 1953).
 #' 
+#' @param clim_norm_sta data frame with climatic normals
 #' @param save_dir name of destination directory for graphs (if any).
 #' @param format graphical format of graphs; default is NULL.
 #' @param main_title main title for all charts; e.g., it may include references to station id. Default is NULL.
@@ -19,6 +20,8 @@ NULL
 #' @return Bagnouls - Gaussen's charts of precipitation and temperature. 
 #'
 #' @details 
+#' \code{clim_norm_sta} can be e.g. one element of the output of function \code{\link{climate}}. See \code{examples}.
+#' 
 #' If \code{format} is NULL (default), graphs are sent to the console. Otherwise, a file is produced and saved. \code{format} is used only if the graphs are to be sent to files. Values allowed are: "png", "jpeg", "tiff", "bmp".
 #' 
 #' If one or more data are missing, the chart is not processed.
@@ -40,7 +43,7 @@ NULL
 #' @seealso \code{\link{climate}}
 #'   
 #' @references 
-#' Bagnouls, F., and Gaussen, H., 1953: Saison sèche et indice xérothermique. Docum. pour les Cartes des Prod. Végét. Série: Généralité, 1 (1953), pp. 1-49
+#' Bagnouls, F., and Gaussen, H., 1953: Saison seche et indice xerothermique. Docum. pour les Cartes des Prod. Veget. Serie: Generalite, 1 (1953), pp. 1-49
 
 
 bagn_gau<-function(clim_norm_sta, save_dir=NULL, format=NULL, main_title=NULL, st_name=NULL, trace_grid=TRUE, tick_step=20, bar_width=30, bar_col="grey", trace_0.line=TRUE, ...)
