@@ -16,12 +16,14 @@ bagn_gau(clim_norm_sta, save_dir = NULL, format = NULL, main_title = NULL,
   NULL.}
 
   \item{main_title}{main title for all charts; e.g., it may
-  include references to station id. Default is NULL.}
+  include references to station id. Default is
+  \code{NULL}.}
 
   \item{st_name}{name to be included into graphs titles.
-  Only for file output. Default is NULL.}
+  Only for file output. Default is \code{NULL}.}
 
-  \item{trace_grid}{logic. TRUE (default) adds a grid.}
+  \item{trace_grid}{logic. If \code{TRUE} (default) adds a
+  grid.}
 
   \item{tick_step}{step for Y axis (precipitation). Default
   is 20 (mm)}
@@ -31,8 +33,8 @@ bagn_gau(clim_norm_sta, save_dir = NULL, format = NULL, main_title = NULL,
 
   \item{bar_col}{color of bars. Default is "grey".}
 
-  \item{trace_0.line}{logic. If TRUE (default), a line at P
-  = 0 and T = 0 is traced.}
+  \item{trace_0.line}{logic. If \code{TRUE} (default), a
+  line at P = 0 and T = 0 is traced.}
 
   \item{...}{arguments to be passed to methods, such as
   graphical parameters (see \code{\link{par}}).}

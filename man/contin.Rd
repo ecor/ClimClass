@@ -10,14 +10,14 @@ contin(clim_norm, latitude = NULL, elevation = NULL,
 
   \item{latitude}{station latitude in degrees. Used in
   Gorczynski's and Conrad's classifications (indices 1 and
-  2). Default is NULL.}
+  2). Default is \code{NULL}.}
 
   \item{elevation}{station elevation in m. Used in Gams'
-  classification (index 3). Default is NULL.}
+  classification (index 3). Default is \code{NULL}.}
 
   \item{Michalet_correction}{logic: if TRUE, Michalet's
   correction is applied to index 3 (Gams). Default is
-  FALSE.}
+  \code{FALSE}.}
 
   \item{indices}{set of aridity indices to be listed.
   Default is all indices (1 to 4).}

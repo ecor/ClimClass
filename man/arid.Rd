@@ -8,19 +8,20 @@ arid(clim_norm, coeff_Hargr = NULL, monthly = FALSE, indices = 1:6)
   \item{clim_norm}{climatic normals}
 
   \item{coeff_Hargr}{mean monthly solar radiation; used
-  only for Thornthwaite's annual index Im. Default is NULL}
+  only for Thornthwaite's annual index Im. Default is
+  \code{NULL}}
 
   \item{monthly}{logic. Sets calculation to the monthly
-  mode if TRUE. Default is FALSE.}
+  mode if \code{TRUE}. Default is \code{FALSE}.}
 
   \item{indices}{set of aridity indices to be listed.
   Default is all indices (1 to 6 for annual, 1 to 2 for
   monthly).}
 }
 \value{
-Either a single-line data frame (when \code{monthly} =
-FALSE) with the desired aridity index(es), or a data frame
-(monthly = TRUE), with monthly values of the desired
+Either a single-line data frame (when \code{monthly =
+FALSE}) with the desired aridity index(es), or a data frame
+(\code{monthly = TRUE}), with monthly values of the desired
 index(es).
 }
 \description{
@@ -37,9 +38,9 @@ respectively). It can be the output of function
 extra-atmospheric radiation (see function ExAtRa). It is
 needed only by Thornthwaite's annual index Im.
 
-When \code{monthly} is TRUE, a data frame with monthly
-detail is generated for one station, instead of a synthetic
-single-line data frame.
+When \code{monthly} is \code{TRUE}, a data frame with
+monthly detail is generated for one station, instead of a
+synthetic single-line data frame.
 
 \code{indices}' values are the following:
 

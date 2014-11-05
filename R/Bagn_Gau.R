@@ -4,13 +4,13 @@ NULL
 #' @param clim_norm_sta data frame with climatic normals
 #' @param save_dir name of destination directory for graphs (if any).
 #' @param format graphical format of graphs; default is NULL.
-#' @param main_title main title for all charts; e.g., it may include references to station id. Default is NULL.
-#' @param st_name name to be included into graphs titles. Only for file output. Default is NULL.
-#' @param trace_grid logic. TRUE (default) adds a grid.
+#' @param main_title main title for all charts; e.g., it may include references to station id. Default is \code{NULL}.
+#' @param st_name name to be included into graphs titles. Only for file output. Default is \code{NULL}.
+#' @param trace_grid logic. If \code{TRUE} (default) adds a grid.
 #' @param tick_step step for Y axis (precipitation). Default is 20 (mm)
 #' @param bar_width width of bars in the chart. Default is 30.
 #' @param bar_col color of bars. Default is "grey".
-#' @param trace_0.line logic. If TRUE (default), a line at P = 0 and T = 0 is traced.
+#' @param trace_0.line logic. If \code{TRUE} (default), a line at P = 0 and T = 0 is traced.
 #' @param ... arguments to be passed to methods, such as graphical parameters (see \code{\link{par}}).
 
 #' @title Bagnouls - Gaussen graphs

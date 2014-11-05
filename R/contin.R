@@ -2,9 +2,9 @@ NULL
 #' @description Calculates climate continentality / oceanicity according to several indices.
 #' 
 #' @param clim_norm climatic normals
-#' @param latitude station latitude in degrees. Used in Gorczynski's and Conrad's classifications (indices 1 and 2). Default is NULL.
-#' @param elevation station elevation in m. Used in Gams' classification (index 3). Default is NULL.
-#' @param Michalet_correction logic: if TRUE, Michalet's correction is applied to index 3 (Gams). Default is FALSE.
+#' @param latitude station latitude in degrees. Used in Gorczynski's and Conrad's classifications (indices 1 and 2). Default is \code{NULL}.
+#' @param elevation station elevation in m. Used in Gams' classification (index 3). Default is \code{NULL}.
+#' @param Michalet_correction logic: if TRUE, Michalet's correction is applied to index 3 (Gams). Default is \code{FALSE}.
 #' @param indices set of aridity indices to be listed. Default is all indices (1 to 4).
 #'
 #' @title Continentality indices

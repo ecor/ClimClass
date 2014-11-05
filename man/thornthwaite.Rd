@@ -16,12 +16,12 @@ thornthwaite(series, latitude, clim_norm = NULL, first.yr = NULL,
   \item{clim_norm}{climatic normals.}
 
   \item{first.yr}{first year of the period over which water
-  balance is calculated. Default is NULL (calculations
-  start with the first year of the series).}
+  balance is calculated. Default is \code{NULL}
+  (calculations start with the first year of the series).}
 
   \item{last.yr}{last year of the period over which water
-  balance is calculated. Default is NULL (calculations stop
-  with the last year of the series).}
+  balance is calculated. Default is \code{NULL}
+  (calculations stop with the last year of the series).}
 
   \item{quant}{vector of quantiles for which water balance
   has to be assessed. Default is: min, 10th, 25th 50th,
@@ -84,28 +84,28 @@ later.
 \code{snow_melt_coeff} is (are) the coefficient(s) for snow
 melt fraction(s) at any month where the condition for
 melting exists. If \code{snow_melt_coeff} = 1 (default),
-all the melting occurs in the first month when Tm >=
-\code{Tsnow}; if it is a vector, melting is spread over
-more than one month. If the sum of coefficients is less
-than 1, the residual melting occurs in one further month.
+all the melting occurs in the first month when \code{Tm >=
+Tsnow}; if it is a vector, melting is spread over more than
+one month. If the sum of coefficients is less than 1, the
+residual melting occurs in one further month.
 
-The function output is a list of two lists of data frames
+The function returns a list of two lists of data frames
 (balance and quantile). In both lists, data frame (and
 names) are the following (all variables in mm):
 
-Precipitation (repeats input values);
+\code{Precipitation} (repeats input values);
 
-Et0 (potential evapotranspiration);
+\code{Et0} (potential evapotranspiration);
 
-Storage (water stored in soil);
+\code{Storage} (water stored in soil);
 
-Prec. - Evap. (difference between precipitation and
+\code{Prec. - Evap.} (difference between precipitation and
 potential evapotranspiration);
 
-Deficit (difference between potential and real
+\code{Deficit} (difference between potential and real
 evapotranspiration, due to water unavailability in soil);
 
-Surplus (water surplus in soil, routed to runoff).
+\code{Surplus} (water surplus in soil, routed to runoff).
 
 Please, refer to the quoted references for details.
 
@@ -152,6 +152,6 @@ the water balance.  Publications in climatology, Volume
 }
 \seealso{
 \code{\link{climate}}, \code{\link{ExAtRa}},
-\code{\link{plot_quant}}
+\code{\link{plot.thornthwaite}}
 }
 

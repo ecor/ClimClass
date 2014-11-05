@@ -2,7 +2,7 @@ NULL
 #' @description General climate classification after Koeppen - Geiger.
 #' 
 #' @param clim_norm average values (climate normals) for the desired period.
-#' @param A_B_C_special_sub.classes logical. Sets if calculations have to consider sub-classes based on rain features in climate types A, B, and C  (see details). Default is FALSE.
+#' @param A_B_C_special_sub.classes logical. Sets if calculations have to consider sub-classes based on rain features in climate types A, B, and C  (see details). Default is \code{FALSE}.
 #' 
 #'
 #' @title Koeppen - Geiger's climate classification
@@ -20,7 +20,7 @@ NULL
 #' 
 #' Climates "Cx" have P[May + June] >= 1.3 P [Aug. + Sept.] in N emisphere, and P[Nov. + Dec.] >= 1.3 P[Febr. + March] in S emisphere.
 #' 
-#' \code{A_B_C_special_sub.classes}, if TRUE, adds a letter to the second sub-type of climates: "i" or "g" (climate A), "w" or "s" (climate B), and  "i", "g", or "x" (climate C).
+#' \code{A_B_C_special_sub.classes}, if \code{TRUE}, adds a letter to the second sub-type of climates: "i" or "g" (climate A), "w" or "s" (climate B), and  "i", "g", or "x" (climate C).
 #' 
 #' Fields in the output data frame are:
 #' 

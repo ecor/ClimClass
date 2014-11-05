@@ -4,8 +4,8 @@ NULL
 #' @param series the monthly series of temperature and precipitation. 
 #' @param latitude latitude of the station in degrees.
 #' @param clim_norm climatic normals.
-#' @param first.yr first year of the period over which water balance is calculated. Default is NULL (calculations start with the first year of the series).
-#' @param last.yr last year of the period over which water balance is calculated. Default is NULL (calculations stop with the last year of the series).
+#' @param first.yr first year of the period over which water balance is calculated. Default is \code{NULL} (calculations start with the first year of the series).
+#' @param last.yr last year of the period over which water balance is calculated. Default is \code{NULL} (calculations stop with the last year of the series).
 #' @param quant vector of quantiles for which water balance has to be assessed. Default is: min, 10th, 25th 50th, 75th, 90th, max.
 #' @param snow.init initial water equivalent for snowpack (mm). Default is 20.
 #' @param Tsnow maximum temperature (monthly mean) for precipitation to be treated as snowfall. Default is -1 degree C.
@@ -28,21 +28,21 @@ NULL
 #' 
 #' At any winter season, the maximum monthly snowpack height is attained in the last month before "spring" conditions (Tm >= Tsnow), even if a month with Tm < Tsnow may occur later.
 #' 
-#' \code{snow_melt_coeff} is (are) the coefficient(s) for snow melt fraction(s) at any month where the condition for melting exists. If \code{snow_melt_coeff} = 1 (default), all the melting occurs in the first month when Tm >= \code{Tsnow}; if it is a vector, melting is spread over more than one month. If the sum of coefficients is less than 1, the residual melting occurs in one further month.
+#' \code{snow_melt_coeff} is (are) the coefficient(s) for snow melt fraction(s) at any month where the condition for melting exists. If \code{snow_melt_coeff} = 1 (default), all the melting occurs in the first month when \code{Tm >= Tsnow}; if it is a vector, melting is spread over more than one month. If the sum of coefficients is less than 1, the residual melting occurs in one further month.
 #' 
-#' The function output is a list of two lists of data frames (balance and quantile). In both lists, data frame (and names) are the following (all variables in mm):
+#' The function returns a list of two lists of data frames (balance and quantile). In both lists, data frame (and names) are the following (all variables in mm):
 #' 
-#' Precipitation (repeats input values);
+#' \code{Precipitation} (repeats input values);
 #' 
-#' Et0 (potential evapotranspiration);
+#' \code{Et0} (potential evapotranspiration);
 #' 
-#' Storage (water stored in soil);
+#' \code{Storage} (water stored in soil);
 #' 
-#' Prec. - Evap. (difference between precipitation and potential evapotranspiration);
+#' \code{Prec. - Evap.} (difference between precipitation and potential evapotranspiration);
 #' 
-#' Deficit (difference between potential and real evapotranspiration, due to water unavailability in soil);
+#' \code{Deficit} (difference between potential and real evapotranspiration, due to water unavailability in soil);
 #' 
-#' Surplus (water surplus in soil, routed to runoff).
+#' \code{Surplus} (water surplus in soil, routed to runoff).
 #' 
 #' Please, refer to the quoted references for details.
 #' 
@@ -79,7 +79,7 @@ NULL
 #'  }
 #'  names(W_balance)<-names(thornt_lst); names(quantiles)<-names(thornt_lst)
 #'  
-#' @seealso \code{\link{climate}}, \code{\link{ExAtRa}}, \code{\link{plot_quant}}
+#' @seealso \code{\link{climate}}, \code{\link{ExAtRa}}, \code{\link{plot.thornthwaite}}
 
 thornthwaite <- function(series,  latitude, clim_norm=NULL, first.yr=NULL, last.yr=NULL, quant=c(0,0.10,0.25,0.50,0.75,0.90,1.00),
                          snow.init=20, Tsnow=-1,  TAW=100, fr.sn.acc=0.95,  snow_melt_coeff=1)
@@ -299,7 +299,8 @@ thornthwaite <- function(series,  latitude, clim_norm=NULL, first.yr=NULL, last.
   names(list_quant)<- names(list_thornt)
   
   list_2.lists<-list(W_balance=list_thornt, quantiles=list_quant)
-  
+  class(list_2.lists) <- "thornthwaite"
+
   return(list_2.lists)
   
 }

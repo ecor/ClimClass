@@ -11,7 +11,7 @@ koeppen_geiger(clim_norm, A_B_C_special_sub.classes = FALSE)
   \item{A_B_C_special_sub.classes}{logical. Sets if
   calculations have to consider sub-classes based on rain
   features in climate types A, B, and C (see details).
-  Default is FALSE.}
+  Default is \code{FALSE}.}
 }
 \value{
 A one-line data frame reporting a resume of climatic
@@ -52,9 +52,10 @@ Climates "Cx" have P[May + June] >= 1.3 P [Aug. + Sept.] in
 N emisphere, and P[Nov. + Dec.] >= 1.3 P[Febr. + March] in
 S emisphere.
 
-\code{A_B_C_special_sub.classes}, if TRUE, adds a letter to
-the second sub-type of climates: "i" or "g" (climate A),
-"w" or "s" (climate B), and "i", "g", or "x" (climate C).
+\code{A_B_C_special_sub.classes}, if \code{TRUE}, adds a
+letter to the second sub-type of climates: "i" or "g"
+(climate A), "w" or "s" (climate B), and "i", "g", or "x"
+(climate C).
 
 Fields in the output data frame are:
 
