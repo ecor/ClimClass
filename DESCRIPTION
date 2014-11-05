@@ -11,4 +11,4 @@ Description: Classification of climate according to Koeppen - Geiger, of
     Walter-Lieth.
 License: GPL (>= 2)
 Depends:
-    geosphere
+    R(>= 2.10.0),geosphere,ggplot2,reshape2

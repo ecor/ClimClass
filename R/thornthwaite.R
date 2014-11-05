@@ -13,7 +13,9 @@ NULL
 #' @param fr.sn.acc  fraction of snow that contributes to snowpack (0-1). 1 - fr.sn.acc is treated as liquid monthly precipitation Default is 0.95.
 #' @param snow_melt_coeff monthly coefficient(s) for snowmelt. Default is 1.
 #' 
-#'
+#'@import geosphere
+#' 
+#' 
 #' @title Thornthwaite and Mather's water balance
 #' 
 #' @author Giambattista Toller and Emanuele Eccel
@@ -30,7 +32,7 @@ NULL
 #' 
 #' \code{snow_melt_coeff} is (are) the coefficient(s) for snow melt fraction(s) at any month where the condition for melting exists. If \code{snow_melt_coeff} = 1 (default), all the melting occurs in the first month when \code{Tm >= Tsnow}; if it is a vector, melting is spread over more than one month. If the sum of coefficients is less than 1, the residual melting occurs in one further month.
 #' 
-#' The function returns a list of two lists of data frames (balance and quantile). In both lists, data frame (and names) are the following (all variables in mm):
+#' The output function is a list of two lists of data frames (balance and quantile). In both lists, data frame (and names) are the following (all variables in mm):
 #' 
 #' \code{Precipitation} (repeats input values);
 #' 

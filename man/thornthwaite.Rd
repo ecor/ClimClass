@@ -89,7 +89,7 @@ Tsnow}; if it is a vector, melting is spread over more than
 one month. If the sum of coefficients is less than 1, the
 residual melting occurs in one further month.
 
-The function returns a list of two lists of data frames
+The output function is a list of two lists of data frames
 (balance and quantile). In both lists, data frame (and
 names) are the following (all variables in mm):
 
