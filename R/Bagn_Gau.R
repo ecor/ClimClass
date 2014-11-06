@@ -37,8 +37,12 @@ NULL
 #' data(Trent_climate)
 #' # clima_81_10 can be generated from monthly time series by function \code{\link{climate}}.
 #' par(ask=TRUE)
-#' for(sta in 1:length(clima_81_10))
-#'   bagn_gau(clim_norm_sta= clima_81_10 [[sta]], main_title=paste(names(clima_81_10[sta]), "  1981-2010"), bar_width=40)
+#' for(sta in 1:length(clima_81_10)) {
+#'   bagn_gau(clim_norm_sta= clima_81_10 [[sta]], 
+#'   main_title=paste(names(clima_81_10[sta]), "  1981-2010")
+#' 	, bar_width=40)
+#' }
+#' 
 #' 
 #' @seealso \code{\link{climate}}
 #'   

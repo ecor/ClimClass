@@ -1,6 +1,7 @@
 S3method(plot,thornthwaite)
 export(ExAtRa)
 export(arid)
+export(as.datcli)
 export(bagn_gau)
 export(climate)
 export(contin)

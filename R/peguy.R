@@ -17,18 +17,21 @@ NULL
 #' @param PrecipitationTriangleCoords Precipitation coordinates for triangle vertices in the Peguy Climograph. Default coordinates are expressed in millimeters.
 #' @param xlab,ylab xy axis labels
 #' @param lambda.label numeric value used to locate climate attribute labels
-#' @param climate.label string vector containing  climate attribute. Default is \code{c("Temperate", "Cold", "Arid", "Hot")}. Alternatively in Italian: it is \code{c("Temperato","Freddo","Arido","Caldo")}  
+#' @param climate.label string vector containing  climate attributes. Default is \code{c("Temperate", "Cold", "Arid", "Hot")}. Alternatively it can be translated into any other languange.   
 #' @param xyField column names of \code{data} for the x and y variables used in the Peguy Climate Diagram.
-#' @param pointsField column name of \code{data} containing the fields to be represent with different point colors. Default is \code{month}.
-#' @param StationsField column name of \code{data} containing the fields  with station ID names. Default is \code{station}. 
-#' @param color.scale character scale indicating a use of a specific color scale. Default is \code{monthly}. 
+#' @param pointsField column name of \code{data} containing the fields to be represented with different point colors. Default is \code{"month"}.
+#' @param StationsField column name of \code{data} containing the fields  with station ID names. Default is \code{"station"}. 
+#' @param color.scale character scale indicating a use of a specific color scale. Default is \code{"monthly"}. 
 #' @param ...  further arguments
 #'
 #' @author Emanuele Cordano
 #' @import ggplot2 reshape2
 # @docType function
-#' 
-#' @export
+
+
+#' @references Peguy, C.P. (1970) Precis de climatologie, ed. Masson, Paris.
+#'
+#'  @export
 #' 
 #' @examples
 #' 
@@ -36,7 +39,9 @@ NULL
 #' data(Trent_climate)
 #' TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
 #' names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
-#' p <- peguy(data=TrentinoClimateDf[TrentinoClimateDf$station %in% unique(TrentinoClimateDf$station)[1:3],])
+#' 
+#' data <- TrentinoClimateDf[TrentinoClimateDf$station %in% unique(TrentinoClimateDf$station)[1:3],]
+#' p <- peguy(data=data)
 #' 
 #' 
 

@@ -28,23 +28,23 @@ peguy(data = NULL, TemperatureTriangleCoords = c(0, 23.4, 15),
   attribute labels}
 
   \item{climate.label}{string vector containing climate
-  attribute. Default is \code{c("Temperate", "Cold",
-  "Arid", "Hot")}. Alternatively in Italian: it is
-  \code{c("Temperato","Freddo","Arido","Caldo")}}
+  attributes. Default is \code{c("Temperate", "Cold",
+  "Arid", "Hot")}. Alternatively it can be translated into
+  any other languange.}
 
   \item{xyField}{column names of \code{data} for the x and
   y variables used in the Peguy Climate Diagram.}
 
   \item{pointsField}{column name of \code{data} containing
-  the fields to be represent with different point colors.
-  Default is \code{month}.}
+  the fields to be represented with different point colors.
+  Default is \code{"month"}.}
 
   \item{StationsField}{column name of \code{data}
   containing the fields with station ID names. Default is
-  \code{station}.}
+  \code{"station"}.}
 
   \item{color.scale}{character scale indicating a use of a
-  specific color scale. Default is \code{monthly}.}
+  specific color scale. Default is \code{"monthly"}.}
 
   \item{...}{further arguments}
 }
@@ -56,9 +56,15 @@ data (Mean Temperature, Precipitation)
 data(Trent_climate)
 TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
 names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
-p <- peguy(data=TrentinoClimateDf[TrentinoClimateDf$station \%in\% unique(TrentinoClimateDf$station)[1:3],])
+
+data <- TrentinoClimateDf[TrentinoClimateDf$station \%in\% unique(TrentinoClimateDf$station)[1:3],]
+p <- peguy(data=data)
 }
 \author{
 Emanuele Cordano
+}
+\references{
+Peguy, C.P. (1970) Precis de climatologie, ed. Masson,
+Paris.
 }
 

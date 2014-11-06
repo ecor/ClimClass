@@ -4,7 +4,7 @@ NULL
 #' @param clim_norm climatic normals
 #' @param latitude station latitude in degrees. Used in Gorczynski's and Conrad's classifications (indices 1 and 2). Default is \code{NULL}.
 #' @param elevation station elevation in m. Used in Gams' classification (index 3). Default is \code{NULL}.
-#' @param Michalet_correction logic: if TRUE, Michalet's correction is applied to index 3 (Gams). Default is \code{FALSE}.
+#' @param Michalet_correction logic: if \code{TRUE}, Michalet's correction is applied to index 3 (Gams). Default is \code{FALSE}.
 #' @param indices set of aridity indices to be listed. Default is all indices (1 to 4).
 #'
 #' @title Continentality indices
@@ -51,8 +51,8 @@ NULL
 #' 
 #' 
 #' # clima_81_10 is a list of data frames having climatic means of temperature and precipitation as 
-#' # required by the aridity indices algorithms, each one referring to one station. It can be the output 
-#' # of function climate.
+#' # required by the aridity indices algorithms, each one referring to one station. 
+#' # It can be the output of function climate.
 #' 
 #' # creates a data frame with all the continentality indices for all stations in clima_81_10
 #' 
@@ -60,8 +60,12 @@ NULL
 #' elev<-coord_elev$Elevation
 #' 
 #' contin_I<-NULL
-#' for(i in 1:length(clima_81_10))
-#'   contin_I[[i]]<-contin(clima_81_10[[i]], latitude=latit[i], elevation=elev[i], Michalet_correction=TRUE)
+#' for(i in 1:length(clima_81_10)) {
+#'   contin_I[[i]]<-contin(clima_81_10[[i]], 
+#'    latitude=latit[i], 
+#'    elevation=elev[i], 
+#'    Michalet_correction=TRUE)
+#' }
 #' names(contin_I)<-names(clima_81_10)
 #'
 #' @seealso \code{\link{climate}}
