@@ -2,7 +2,7 @@ Package: ClimClass
 Type: Package
 Title: Climate Classification according to several indices
 Version: 1.0
-Date: 2014-10-13
+Date: 2014-11-17
 Author: Emanuele Eccel, Emanuele Cordano, Giambattista Toller
 Maintainer: Emanuele Eccel <emanuele.eccel@fmach.it>
 Description: Classification of climate according to Koeppen - Geiger, of
