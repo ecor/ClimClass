@@ -6,7 +6,7 @@
 Climate classifications and graphics
 }
 \description{
-Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality indices, and of water balance after Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen, Walter-Lieth.
+Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality indices, and of water balance after Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.
 }
 \details{
 \tabular{ll}{
@@ -19,11 +19,6 @@ License: \tab GPL (>= 2)\cr
 The package collects several criteria for climate classification. The most general is Koeppen - Geiger's classification, as described in Trewartha (1980), implemented in function \code{\link{koeppen_geiger}}. Almost all sub-classes have been considered, with the only exception of those whose attribution is based on qualitative assessment of climatic features. 
 
 A classic graphical visualization of temperature and precipitation, according to Bagnouls and Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This 
-
-
-[definire uso Walter-Lieth]
-
-
 
 Function \code{\link{arid}} calculates a set of six annual aridity indices (Emberger, 1955; Lang, R., 1920; Rivas - Martinez, (website); and UNEP, 1997; De Martonne, 1925; Thornthwaite, 1948). For the latter two also a monthly index is calculated.
 
