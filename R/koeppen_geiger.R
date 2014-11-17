@@ -14,7 +14,7 @@ NULL
 #' 
 #' Koeppen - Geiger's classification is based on Trewartha and Lyle, 1980. The function also holds for Southern emisphere, except for the "Gange" sub-type ("Ag" and "Cg"). Type "H" (highland climate) and sub-types "Bn" and "Cn" (where n stands for Nebel) are never attributed, being based on a qualitative description in the quoted reference.
 #' 
-#' Sub-type "w" (wet-and-dry) or "m" (monsoon) in climate "A" is set according to the definition after Encyclopaedia Britannica (\url{http://www.britannica.com/EBchecked/topic/322068/Koppen-climate-classification}): if P in the 4 driest months is less than 1/5 of the wettest months and if both the 4 driest and wettest months are split over non-contiguous seasons (either 2 months for season or 1 and 3 months for season), then sub-type is "".
+#' Sub-type "w" (wet-and-dry) or "m" (monsoon) in climate "A" is set according to the definition after Encyclopaedia Britannica (\url{http://www.britannica.com/EBchecked/topic/322068/Koppen-climate-classification}): if P in the 4 driest months is less than 1/5 of the wettest months and if both the 4 driest and wettest months are split over non-contiguous seasons (either 2 months per season or 1 and 3 months per season), then sub-type is "".
 #' 
 #' For climate "A", the letter "m" is attributed to the first sub-type.
 #' 

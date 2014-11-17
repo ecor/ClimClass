@@ -28,6 +28,8 @@ Thornthwaite's method for the assessment of soil water balance (Thornthwaite, 19
 
 The assessment of potential evapotranspiration by Thornthwaite and Mather's algorithm requires the estimation of extra-atmospheric radiation, which is calculated by function \code{\link{ExAtRa}}, based on the algorithm of Allen et al., 2005.
 
+Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \code{\link{Trent_climate}} into a data frame format like \code{datcli} in \code{\link{climatol}} package. It can be used to plot Walter - Lieth's climographs (see examples documentation).
+
 The data set included in the library is formed by monthly time series of temperature and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento - Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are calculated, too (output of function \code{\link{climate}}). The output of function \code{\link{thornthwaite}} is present in the data set \code{\link{Trent_climate}}, as input for function \code{\link{plot}}. 
 
 Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{arid_ind_tables} and \code{contin_ind_tables}, respectively).
@@ -60,7 +62,7 @@ Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage des forestiers. Depar
 
 Lieth, H., Berlekamp, J., Fuest, S., and Riediger, S.: Walter-Lieth: Climate Diagram World Atlas, CD-Series I of Climate and Biosphere, 1st edit.
 
-Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique del montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
+Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique des montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
 
 Rivas-Martinez: http://www.globalbioclimatics.org/
 

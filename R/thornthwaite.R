@@ -20,7 +20,7 @@ NULL
 #' 
 #' @author Giambattista Toller and Emanuele Eccel
 #'
-#' @return A list of two lists. The first (name: W_balance) is a list of data frames containing the monthly series of all indices, the second (name: quantiles) the relevant quantiles. See details for meanings of single variables.
+#' @return A \code{thornthwaite} S3 object, consisting on a list of two lists. The first (name: W_balance) is a list of data frames containing the monthly series of all indices, the second (name: quantiles) the relevant quantiles. See details for meanings of single variables.
 #'
 #' @details The algorithm for the calculation of water balance is adapted from Thornthwaite, 1948; Thornthwaite and Mather, 1955; Thornthwaite and Mather, 1957.
 #' 
@@ -28,7 +28,7 @@ NULL
 #' 
 #' \code{clim_norm} is a monthly data frame of climate normals, with column names: "P", "Tn", "Tx", "Tm" (precipitation, minimum, maximum and mean temperature, respectively). It can be the output of function \code{\link{climate}}. If \code{clim_norm} is not NULL, any missing value in the monthly series is substituted by the corresponding climatic value in \code{clim_norm}.
 #' 
-#' At any winter season, the maximum monthly snowpack height is attained in the last month before "spring" conditions (Tm >= Tsnow), even if a month with Tm < Tsnow may occur later.
+#' At any winter season, the maximum monthly snowpack height is attained in the last month before "spring" conditions (\code{Tm} >= \code{Tsnow}), even if a month with Tm < Tsnow may occur later.
 #' 
 #' \code{snow_melt_coeff} is (are) the coefficient(s) for snow melt fraction(s) at any month where the condition for melting exists. If \code{snow_melt_coeff} = 1 (default), all the melting occurs in the first month when \code{Tm >= Tsnow}; if it is a vector, melting is spread over more than one month. If the sum of coefficients is less than 1, the residual melting occurs in one further month.
 #' 
@@ -71,7 +71,7 @@ NULL
 #' # It can be the output of function "climate".
 #' library(geosphere) # required for function daylength
 #' thornt_lst<-NULL
-#' lista_cli <- lista_cli[1:3] ## lista_cli is reduced to reduced execution elapsed time !! 
+#' lista_cli <- lista_cli[1:3] ## lista_cli is reduced to diminish elapsed time of execution!
 #' for(k in 1 : length(lista_cli[1:3])) {
 #'   thornt_lst[[k]]<-thornthwaite(series=lista_cli[[k]], 
 #'   clim_norm=clima_81_10[[k]],

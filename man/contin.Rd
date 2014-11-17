@@ -100,7 +100,7 @@ des forestiers. Departement SIAFEE, UFR Forets, Arbres et
 Milieux Naturels. ENGREF, Nancy Cedex.
 
 Michalet, R., and Souchier, B., 1991: Une approche
-synthetique biopedoclimatique del montagnes
+synthetique biopedoclimatique des montagnes
 mediterraneennes: l'exemple du Maroc septemptrional.
 Thesis, Univ. J. Fourier, Grenoble, 273 pp.
 

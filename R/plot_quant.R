@@ -15,7 +15,7 @@ NULL
 #' 
 #' @method plot thornthwaite
 #' @S3method plot thornthwaite
-#' @aliases plot plot.thornthwaite plot_quant
+#' @aliases plot plot.thornthwaite
 #' 
 #' 
 #' 
@@ -51,7 +51,7 @@ NULL
 #' # which can be split into two separate lists (see function thornthwaite)
 #' sta <- 1     # 1st station in the list of quantile tables
 #' q_list=quantiles[[sta]]
-#' class(q_list) <- "thornthwaite" ## q_list is is coerced as a "thornthwaite" S3 object
+#' class(q_list) <- "thornthwaite" ## q_list is coerced to a "thornthwaite" S3 object
 #' plot(q_list, 
 #' st_name=names(quantiles)[sta], variables=c("Precipitation",  "Et0"), 
 #' leg_pos = "topleft", col=c(1:6,1), pch=c(1:6,16),  

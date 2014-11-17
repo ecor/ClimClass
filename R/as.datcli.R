@@ -33,7 +33,7 @@ NULL
 #' 
 #' station <- "T0129"
 #' datcli <- as.datcli(TrentinoClimateDf,station=station)
-#' diagwl(datcli,est=station,alt=100,per="Period",mlab="en")
+#' diagwl(datcli,est=station,alt=100,per="Period",mlab="en") ## plots a Walter-Lieth's climograph
 #' 
 
 as.datcli <- function(df,station="T0009",MonthField="month",
