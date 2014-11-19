@@ -2,8 +2,8 @@
 \alias{contin}
 \title{Continentality indices}
 \usage{
-contin(clim_norm, latitude = NULL, elevation = NULL,
-  Michalet_correction = FALSE, indices = 1:4)
+  contin(clim_norm, latitude = NULL, elevation = NULL,
+    Michalet_correction = FALSE, indices = 1:4)
 }
 \arguments{
   \item{clim_norm}{climatic normals}
@@ -23,38 +23,38 @@ contin(clim_norm, latitude = NULL, elevation = NULL,
   Default is all indices (1 to 4).}
 }
 \value{
-A single-line data frame with the desired continentality
-index(es).
+  A single-line data frame with the desired continentality
+  index(es).
 }
 \description{
-Calculates climate continentality / oceanicity according to
-several indices.
+  Calculates climate continentality / oceanicity according
+  to several indices.
 }
 \details{
-clim_norm is a monthly data frame of climate normals, with
-column names: "P", "Tn", "Tx", "Tm" (precipitation,
-minimum, maximum and mean temperature, respectively). It
-can be the output of function \code{\link{climate}}.
+  clim_norm is a monthly data frame of climate normals,
+  with column names: "P", "Tn", "Tx", "Tm" (precipitation,
+  minimum, maximum and mean temperature, respectively). It
+  can be the output of function \code{\link{climate}}.
 
-\code{indices}' values are the following:
+  \code{indices}' values are the following:
 
-1: Gorczynski - K.G. (Gorczynski, L., 1920).
+  1: Gorczynski - K.G. (Gorczynski, L., 1920).
 
-2: Conrad - K.C. (Conrad, 1946).
+  2: Conrad - K.C. (Conrad, 1946).
 
-3: Gams - alpha. (Gams, H., 1932). For Michalet's
-correction: Michalet and Souchier, 1991.
+  3: Gams - alpha. (Gams, H., 1932). For Michalet's
+  correction: Michalet and Souchier, 1991.
 
-4: Rivas-Martinez - Ic. (Rivas - Martinez, web page).
+  4: Rivas-Martinez - Ic. (Rivas - Martinez, web page).
 
-A reference for the continentality / oceanicity degree is
-given in the list object \code{continental_ind_tables} of
-data set \code{\link{Trent_climate}}.
+  A reference for the continentality / oceanicity degree is
+  given in the list object \code{continental_ind_tables} of
+  data set \code{\link{Trent_climate}}.
 
-If Michalet's correction is applied to Gams' hygric
-continentality index, the value of precipitation is
-proportionally diminished for elevations below 900 m a.s.l.
-See also Lebourgeoise, 2010.
+  If Michalet's correction is applied to Gams' hygric
+  continentality index, the value of precipitation is
+  proportionally diminished for elevations below 900 m
+  a.s.l. See also Lebourgeoise, 2010.
 }
 \examples{
 data(Trent_climate)
@@ -79,34 +79,34 @@ for(i in 1:length(clima_81_10)) {
 names(contin_I)<-names(clima_81_10)
 }
 \author{
-Emanuele Eccel
+  Emanuele Eccel
 }
 \references{
-Conrad, V. 1946: Usual formulas of continentality and their
-limits of validity. Transactions, American Geophysical
-Union, Volume 27, Issue 5, p. 663-664.
+  Conrad, V. 1946: Usual formulas of continentality and
+  their limits of validity. Transactions, American
+  Geophysical Union, Volume 27, Issue 5, p. 663-664.
 
-Gams, H., 1932. Die klimatische Begrenzung von
-Pflanzenarealen und die Verteilung der hygrischen
-Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde,
-Berlin.
+  Gams, H., 1932. Die klimatische Begrenzung von
+  Pflanzenarealen und die Verteilung der hygrischen
+  Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde,
+  Berlin.
 
-Gorczynski, L. (1920) : Sur le calcul du degre de
-continentalisme et son application dans la climatologie.
-Geografiska Annaler 2, 324-331.
+  Gorczynski, L. (1920) : Sur le calcul du degre de
+  continentalisme et son application dans la climatologie.
+  Geografiska Annaler 2, 324-331.
 
-Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage
-des forestiers. Departement SIAFEE, UFR Forets, Arbres et
-Milieux Naturels. ENGREF, Nancy Cedex.
+  Lebourgeoise, F., 2010: Cours de bioclimatologie a
+  l'usage des forestiers. Departement SIAFEE, UFR Forets,
+  Arbres et Milieux Naturels. ENGREF, Nancy Cedex.
 
-Michalet, R., and Souchier, B., 1991: Une approche
-synthetique biopedoclimatique des montagnes
-mediterraneennes: l'exemple du Maroc septemptrional.
-Thesis, Univ. J. Fourier, Grenoble, 273 pp.
+  Michalet, R., and Souchier, B., 1991: Une approche
+  synthetique biopedoclimatique del montagnes
+  mediterraneennes: l'exemple du Maroc septemptrional.
+  Thesis, Univ. J. Fourier, Grenoble, 273 pp.
 
-Rivas-Martinez: http://www.globalbioclimatics.org/.
+  Rivas-Martinez: http://www.globalbioclimatics.org/.
 }
 \seealso{
-\code{\link{climate}}
+  \code{\link{climate}}
 }
 
