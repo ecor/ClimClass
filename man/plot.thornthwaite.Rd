@@ -3,12 +3,10 @@
 \alias{plot.thornthwaite}
 \title{Thornthwaite - Mather's quantile plot}
 \usage{
-  \method{plot}{thornthwaite} (x, save_dir = NULL,
-    format = NULL,
-    variables = c("Precipitation", "Et0", "Storage", "Prec. - Evap.", "Deficit", "Surplus"),
-    title = TRUE, trace_grid = TRUE, st_name = NULL,
-    u_y_scale_magn = 0.2, l_y_scale_magn = 0,
-    leg_pos = "topleft", ...)
+\method{plot}{thornthwaite}(x, save_dir = NULL, format = NULL,
+  variables = c("Precipitation", "Et0", "Storage", "Prec. - Evap.", "Deficit",
+  "Surplus"), title = TRUE, trace_grid = TRUE, st_name = NULL,
+  u_y_scale_magn = 0.2, l_y_scale_magn = 0, leg_pos = "topleft", ...)
 }
 \arguments{
   \item{x}{a list of quantile data frames of water balance
@@ -46,46 +44,45 @@
   graphical parameters (see \code{\link{par}}).}
 }
 \value{
-  Charts of quantiles for water balance variables (12-month
-  climatic values). They can be sent to the console or
-  saved as graphic files.
+Charts of quantiles for water balance variables (12-month
+climatic values). They can be sent to the console or saved
+as graphic files.
 }
 \description{
-  'plot' method implementation for 12-month quantile
-  climate charts from output of function
-  \code{\link{thornthwaite}} (Thornthwaite and Mather's
-  water balance).
+'plot' method implementation for 12-month quantile climate
+charts from output of function \code{\link{thornthwaite}}
+(Thornthwaite and Mather's water balance).
 }
 \details{
-  Default for plot variables is all those calculated by
-  function thornthwaite: "Precipitation", "Et0", "Storage",
-  "Prec. - Evap.", "Deficit", "Surplus". See function
-  \code{\link{thornthwaite}} for details on variables.
+Default for plot variables is all those calculated by
+function thornthwaite: "Precipitation", "Et0", "Storage",
+"Prec. - Evap.", "Deficit", "Surplus". See function
+\code{\link{thornthwaite}} for details on variables.
 
-  If \code{format} is NULL (default), graphs are sent to
-  the console. Otherwise, a file is produced and saved to
-  the \code{save_dir} directory. Values allowed are: "png",
-  "jpeg", "tiff", "bmp".
+If \code{format} is NULL (default), graphs are sent to the
+console. Otherwise, a file is produced and saved to the
+\code{save_dir} directory. Values allowed are: "png",
+"jpeg", "tiff", "bmp".
 
-  \code{l_y_scale_magn} and \code{u_y_scale_magn} are the
-  magnification coefficients (lower and upper,
-  respectively), for y scale. If rng is the range between
-  maximum and minimum values in all sets of series within a
-  plot, the lower limit for y scale will be (rng *
-  \code{l_y_scale_magn}) below the lower value, and the
-  upper limit will be (rng * \code{u_y_scale_magn}) above
-  the upper value of series.
+\code{l_y_scale_magn} and \code{u_y_scale_magn} are the
+magnification coefficients (lower and upper, respectively),
+for y scale. If rng is the range between maximum and
+minimum values in all sets of series within a plot, the
+lower limit for y scale will be (rng *
+\code{l_y_scale_magn}) below the lower value, and the upper
+limit will be (rng * \code{u_y_scale_magn}) above the upper
+value of series.
 
-  Allowed values for \code{leg_pos} are the same of
-  \code{x} in function \code{\link{legend}}.
+Allowed values for \code{leg_pos} are the same of \code{x}
+in function \code{\link{legend}}.
 
-  Most graphic parameters for functions \code{\link{plot}}
-  and \code{\link{legend}} are accepted.
+Most graphic parameters for functions \code{\link{plot}}
+and \code{\link{legend}} are accepted.
 }
 \note{
-  A conflict is generated if parameters already used by the
-  function are passed (e.g. x for \code{\link{legend}}: use
-  \code{leg_pos} instead).
+A conflict is generated if parameters already used by the
+function are passed (e.g. x for \code{\link{legend}}: use
+\code{leg_pos} instead).
 }
 \examples{
 data(Trent_climate)
@@ -104,9 +101,9 @@ leg_pos = "topleft", col=c(1:6,1), pch=c(1:6,16),
 lty=1, horiz=TRUE,  y.intersp=0.1)
 }
 \author{
-  Emanuele Eccel
+Emanuele Eccel
 }
 \seealso{
-  \code{\link{thornthwaite}}
+\code{\link{thornthwaite}}
 }
 
