@@ -12,16 +12,4 @@ Description: Classification of climate according to Koeppen - Geiger, of
 License: GPL (>= 2)
 Depends:
     R(>= 2.10.0),geosphere,ggplot2,reshape2
-Suggests:
-    climatol
-Collate:
-    'arid.R'
-    'as.datcli.R'
-    'Bagn_Gau.R'
-    'climate.R'
-    'contin.R'
-    'ExAtRa.R'
-    'koeppen_geiger.R'
-    'peguy.R'
-    'plot_quant.R'
-    'thornthwaite.R'
+URL: https://github.com/ecor/ClimClass

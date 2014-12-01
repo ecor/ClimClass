@@ -23,18 +23,25 @@ NULL
 #' 
 #' @examples 
 #' 
+#' ### Not Run!! 
+#' ### Install 'climatol' from 'http://www.climatol.eu/'
+#' ### Then load the load the package and you can uncomment and run the following line
+#' # library(climatol)
 #' 
-#' library(climatol)
-#' 
-#'data(Trent_climate)
-#'TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
-#'names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
+#'  data(Trent_climate)
+#'  TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
+#'  names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
 #' 
 #' 
-#' station <- "T0129"
+#'  station <- "T0129"
 #' datcli <- as.datcli(TrentinoClimateDf,station=station)
-#' diagwl(datcli,est=station,alt=100,per="Period",mlab="en") ## plots a Walter-Lieth's climograph
 #' 
+#' ### Not Run!! 
+#' ### Install 'climatol' from 'http://www.climatol.eu/'
+#' ### Then load the load the package and you can uncomment and run the following line
+#' # diagwl(datcli,est=station,alt=100,per="Period",mlab="en") ## plots a Walter-Lieth's climograph
+#' 
+
 
 as.datcli <- function(df,station="T0009",MonthField="month",
 		     PrecField="P",

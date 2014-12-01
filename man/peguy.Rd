@@ -2,15 +2,12 @@
 \alias{peguy}
 \title{Peguy Climograph}
 \usage{
-  peguy(data = NULL,
-    TemperatureTriangleCoords = c(0, 23.4, 15),
-    PrecipitationTriangleCoords = c(0, 40, 200),
-    ylab = "Precipitation[mm]",
-    xlab = "Mean Temperature [degC]", lambda.label = 1.75,
-    climate.label = c("Temperate", "Cool", "Arid", "Hot"),
-    xyField = c("Tn", "P"), pointsField = "month",
-    StationsField = "station", color.scale = "monthly",
-    ...)
+peguy(data = NULL, TemperatureTriangleCoords = c(0, 23.4, 15),
+  PrecipitationTriangleCoords = c(0, 40, 200), ylab = "Precipitation[mm]",
+  xlab = "Mean Temperature [degC]", lambda.label = 1.75,
+  climate.label = c("Temperate", "Cool", "Arid", "Hot"), xyField = c("Tn",
+  "P"), pointsField = "month", StationsField = "station",
+  color.scale = "monthly", ...)
 }
 \arguments{
   \item{data}{input dataset with climatological monthly
@@ -52,8 +49,8 @@
   \item{...}{further arguments}
 }
 \description{
-  Representation of Peguy Climograph from monthly weather
-  data (Mean Temperature, Precipitation)
+Representation of Peguy Climograph from monthly weather
+data (Mean Temperature, Precipitation)
 }
 \examples{
 data(Trent_climate)
@@ -64,10 +61,10 @@ data <- TrentinoClimateDf[TrentinoClimateDf$station \%in\% unique(TrentinoClimat
 p <- peguy(data=data)
 }
 \author{
-  Emanuele Cordano
+Emanuele Cordano
 }
 \references{
-  Peguy, C.P. (1970) Precis de climatologie, ed. Masson,
-  Paris.
+Peguy, C.P. (1970) Precis de climatologie, ed. Masson,
+Paris.
 }
 
