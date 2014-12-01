@@ -29,7 +29,7 @@ NULL
 #' latitude<-46  
 #' 
 #' # generates 12 values, one for each month
-#' coeff_Hargr<- ExAtRa(DOY=yDay,latitude=latitude, unit="mm")
+#' coeff_rad<- ExAtRa(DOY=yDay,latitude=latitude, unit="mm")
 #' 
 #'   @seealso \code{\link{arid}}
 

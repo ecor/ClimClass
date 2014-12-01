@@ -13,12 +13,12 @@ Classification of climate according to Koeppen - Geiger, of aridity indices, of 
 Package: \tab ClimClass\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2014-10-13\cr
+Date: \tab 2014-11-27\cr
 License: \tab GPL (>= 2)\cr
 }
 The package collects several criteria for climate classification. The most general is Koeppen - Geiger's classification, as described in Trewartha (1980), implemented in function \code{\link{koeppen_geiger}}. Almost all sub-classes have been considered, with the only exception of those whose attribution is based on qualitative assessment of climatic features. 
 
-A classic graphical visualization of temperature and precipitation, according to Bagnouls and Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This function is implemented in library \code{climatol} (\url{http://www.climatol.eu}).
+A classic graphical visualization of temperature and precipitation, according to Bagnouls and Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This function is implemented in library \code{climatol}.
 
 Function \code{\link{arid}} calculates a set of six annual aridity indices (Emberger, 1955; Lang, R., 1920; Rivas - Martinez, (website); and UNEP, 1997; De Martonne, 1925; Thornthwaite, 1948). For the latter two also a monthly index is calculated.
 
@@ -28,7 +28,7 @@ Thornthwaite's method for the assessment of soil water balance (Thornthwaite, 19
 
 The assessment of potential evapotranspiration by Thornthwaite and Mather's algorithm requires the estimation of extra-atmospheric radiation, which is calculated by function \code{\link{ExAtRa}}, based on the algorithm of Allen et al., 2005.
 
-Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \code{\link{Trent_climate}} into a data frame format like \code{datcli} in \code{\link{climatol}} package. It can be used to plot Walter - Lieth's climographs (see examples documentation).
+Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \code{\link{Trent_climate}} into a data frame format like \code{datcli} in \code{climatol} package. It can be used to plot Walter - Lieth's climographs (see examples documentation).
 
 The data set included in the library is formed by monthly time series of temperature and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento - Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are calculated, too (output of function \code{\link{climate}}). The output of function \code{\link{thornthwaite}} is present in the data set \code{\link{Trent_climate}}, as input for function \code{\link{plot}}. 
 
@@ -55,6 +55,8 @@ Emberger, L., 1955. Une classification biogeographique des climats. Receuil des 
 Gams, H., 1932. Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin. 
 
 Gorczynski, L. (1920) : Sur le calcul du degre de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
+
+Hargreaves, G.H., and Samani, Z.A., 1985. Reference crop evapotranspiratin from temperature. Applied Engineering in Agriculture, 1(2):96-99
 
 Lang, R., 1920. Verwitterung und Bodenbildung als Einfuehrung in die Bodenkunde. Schweizerbart Science Publishers, Stuttgart
 

@@ -9,7 +9,7 @@
 \alias{arid_ind_tables} 
 \alias{continental_ind_tables}
 \alias{lista_cli}
-\alias{coeff_Hargr}
+\alias{coeff_rad}
 
 \title{Data set of Trentino climate} 
 \description{Data set for definition of climate of Trentino, Italy. It includes  monthly series of temperature and precipitation, and reference tables for definition of aridity and continentality / oceanicity. 
@@ -28,7 +28,7 @@
 
 \code{coord_elev} is a data frame of coordinates and elevation for each station in the data set. Fields are: station id, northing (degrees), easting (degrees), elevation (m).
 
-\code{coeff_Hargr} is a vector of 12 "Hargreaves' coefficients" corresponding to the daily extra-atmospheric solar radiation energy. It is the output of function \code{\link{ExAtRa}}.
+\code{coeff_rad} is a vector of 12 "radiative energy coefficients" for Hargreaves' equation, corresponding to the daily extra-atmospheric solar radiation energy. It is the output of function \code{\link{ExAtRa}}.
 
 \code{arid_ind_tables} is a list formed by six data frames. Used for reference in aridity indices assessment (see function \code{\link{arid}} and references for data sources).
 

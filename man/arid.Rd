@@ -2,14 +2,19 @@
 \alias{arid}
 \title{Aridity indices}
 \usage{
-arid(clim_norm, coeff_Hargr = NULL, monthly = FALSE, indices = 1:6)
+  arid(clim_norm, coeff_rad = NULL,
+    coeff_Hargr = rep(0.75, 12), monthly = FALSE,
+    indices = 1:6)
 }
 \arguments{
   \item{clim_norm}{climatic normals}
 
-  \item{coeff_Hargr}{mean monthly solar radiation; used
-  only for Thornthwaite's annual index Im. Default is
+  \item{coeff_rad}{mean monthly solar radiation; used only
+  for Thornthwaite's annual index Im. Default is
   \code{NULL}}
+
+  \item{coeff_Hargr}{(vector of monthly) correction
+  coefficient(s) for Hargreaves' equation}
 
   \item{monthly}{logic. Sets calculation to the monthly
   mode if \code{TRUE}. Default is \code{FALSE}.}
@@ -19,88 +24,116 @@ arid(clim_norm, coeff_Hargr = NULL, monthly = FALSE, indices = 1:6)
   monthly).}
 }
 \value{
-Either a single-line data frame (when \code{monthly =
-FALSE}) with the desired aridity index(es), or a data frame
-(\code{monthly = TRUE}), with monthly values of the desired
-index(es).
+  Either a single-line data frame (when \code{monthly =
+  FALSE}) with the desired aridity index(es), or a data
+  frame (\code{monthly = TRUE}), with monthly values of the
+  desired index(es).
 }
 \description{
-Calculates aridity according to several indices.
+  Calculates aridity according to several indices.
 }
 \details{
-\code{clim_norm} is a monthly data frame of climate
-normals, with column names: "P", "Tn", "Tx", "Tm"
-(precipitation, minimum, maximum and mean temperature,
-respectively). It can be the output of function
-\code{\link{climate}}.
+  \code{clim_norm} is a monthly data frame of climate
+  normals, with column names: "P", "Tn", "Tx", "Tm"
+  (precipitation, minimum, maximum and mean temperature,
+  respectively). It can be the output of function
+  \code{\link{climate}}.
 
-\code{coeff_Hargr} corresponds to the mean monthly
-extra-atmospheric radiation (see function ExAtRa). It is
-needed only by Thornthwaite's annual index Im.
+  Monthly potential evapotranspiration (PE) is calculated
+  via the Hargreaves' formula (Hargreaves and Samani,
+  1985):
 
-When \code{monthly} is \code{TRUE}, a data frame with
-monthly detail is generated for one station, instead of a
-synthetic single-line data frame.
+  PE = (0.0023*(clim_norm$Tx -
+  clim_norm$Tn)^(0.5)*(clim_norm$Tm+17.8)*coeff_rad)* lmv *
+  coeff_Hargr
 
-\code{indices}' values are the following:
+  where Tn, Tx, Tm are min, max, and mean temperatures,
+  respectively, and lmv is the number of days in any month.
 
-1 De Martonne - Ia (annual or monthly). De Martonne, 1925.
+  \code{coeff_rad} and \code{coeff_Hargr} are needed only
+  by Thornthwaite's annual index \code{Im} and UNEP's
+  \code{Ai} index, whose PE term is calculated via
+  Hargreaves' equation.
 
-2 Thornthwaite - Im (annual or monthly). Thornthwaite,
-1948.
+  \code{coeff_rad} corresponds to the mean monthly
+  extra-atmospheric radiation (see function
+  \code{\link{ExAtRa}}).
 
-3 Emberger - Q (annual only). Emberger, 1955.
+  \code{coeff_Hargr} is either a single value or a vector
+  of 12 coefficients to adjust Hargreaves' estimation of
+  potential evapotranspiration (implemented in \code{Im}
+  and \code{Ai} indices). From calibration in 6 stations
+  from the same network of \code{\link{Trent_climate}}, its
+  average value is 0.75.
 
-4 Lang - R (annual only). Lang, R., 1920.
+  When \code{monthly} is \code{TRUE}, a data frame with
+  monthly detail is generated for one station, instead of a
+  synthetic single-line data frame.
 
-5 Rivas-Martinez - Io (annual only). Rivas - Martinez,
-website
-http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+  \code{indices}' values are the following:
 
-6 UNEP - Ai (annual only). UNEP, 1997.
+  1 De Martonne - Ia (annual or monthly). De Martonne,
+  1925.
 
-A reference for the aridity degree for any index is given
-in the list object \code{arid_ind_tables} (see
-\code{\link{Trent_climate}}.
+  2 Thornthwaite - Im (annual or monthly). Thornthwaite,
+  1948.
+
+  3 Emberger - Q (annual only). Emberger, 1955.
+
+  4 Lang - R (annual only). Lang, R., 1920.
+
+  5 Rivas-Martinez - Io (annual only). Rivas - Martinez,
+  website
+  http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+
+  6 UNEP - Ai (annual only). UNEP, 1997.
+
+  A reference for the aridity degree for any index is given
+  in the list object \code{arid_ind_tables} (see
+  \code{\link{Trent_climate}}.
 }
 \examples{
 data(Trent_climate)
 # clima_81_10 is a list of data frames having climatic means of temperature and precipitation
 # as required by the aridity indices algorithms, each one referring to one station.
 # It can be the output of function climate.
-# coeff_Hargr is a monthly vector of average daily extra-atmospheric solar radiation,
+# coeff_rad is a monthly vector of average daily extra-atmospheric solar radiation,
 # calculated e.g. by function ExAtRa.
 
-aridity_Y<-lapply(clima_81_10, coeff_Hargr=coeff_Hargr, FUN=arid, monthly=FALSE, indices=c(1,2,5))
+aridity_Y<-lapply(clima_81_10, coeff_rad=coeff_rad, FUN=arid, monthly=FALSE, indices=c(1,2,5))
 }
 \author{
-Emanuele Eccel
+  Emanuele Eccel
 }
 \references{
-De Martonne E., 1925: Traite de Geographie Physique: 3
-tomes, Paris.
+  De Martonne E., 1925: Traite de Geographie Physique: 3
+  tomes, Paris.
 
-Emberger, L., 1955. Une classification biogeographique des
-climats. Receuil des travaux des laboratoires de botanique,
-geologie et zoologie de la faculte des sciences de
-l'universite de Montpellier (Serie Botanique), Fascicule 7,
-3-43.
+  Emberger, L., 1955. Une classification biogeographique
+  des climats. Receuil des travaux des laboratoires de
+  botanique, geologie et zoologie de la faculte des
+  sciences de l'universite de Montpellier (Serie
+  Botanique), Fascicule 7, 3-43.
 
-Lang, R., 1920. Verwitterung und Bodenbildung als
-Einfuehrung in die Bodenkunde. Schweizerbart Science
-Publishers, Stuttgart
+  Hargreaves, G.H., and Samani, Z.A., 1985. Reference crop
+  evapotranspiratin from temperature. Applied Engineering
+  in Agriculture, 1(2):96-99
 
-Rivas-Martinez -
-http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+  Lang, R., 1920. Verwitterung und Bodenbildung als
+  Einfuehrung in die Bodenkunde. Schweizerbart Science
+  Publishers, Stuttgart
 
-Thornthwaite, C. W., 1948: An Approach toward a Rational
-Classification of Climate. Geographical Review, Vol. 38,
-No. 1(Jan.):55-94.
+  Rivas-Martinez -
+  http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
 
-UNEP (United Nations Environment Programme), 1997. World
-atlas of desertification 2ED. UNEP, London.
+  Thornthwaite, C. W., 1948: An Approach toward a Rational
+  Classification of Climate. Geographical Review, Vol. 38,
+  No. 1(Jan.):55-94.
+
+  UNEP (United Nations Environment Programme), 1997. World
+  atlas of desertification 2ED. UNEP, London.
 }
 \seealso{
-\code{\link{climate}}, \code{\link{ExAtRa}}
+  \code{\link{climate}}, \code{\link{ExAtRa}}
 }
 

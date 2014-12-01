@@ -97,13 +97,13 @@ bagn_gau<-function(clim_norm_sta, save_dir=NULL, format=NULL, main_title=NULL, s
     at.P<-ticks_seq[ticks_seq >= 0]
     args<-list(side=2, at=at.P, labels=at.P)
     do.call(what=axis, args=c(args,par_l))
-    args<-list(side = 2, line = 2, "P [mm]", las=1, adj=0, at=y_scale_limits[2]+1.5*tick_step)
+    args<-list(side = 2, line = 2, "P [mm]", las=1, adj=0, at=y_scale_limits[2]+ diff(y_scale_limits)*0.15)
     do.call(what=mtext,args=c(args,par_l))
     # T axis
     at.T<-ticks_seq[ticks_seq< max(temp_2)+tick_step]
     args<-list(side=4, at=at.T, labels=at.T/2)
     do.call(what=axis, args=c(args,par_l))
-    args<-list(side = 4, line = 2, "T [deg. C]", las=1, adj=1, at=y_scale_limits[2]+1.5*tick_step)
+    args<-list(side = 4, line = 2, "T [deg. C]", las=1, adj=1, at=y_scale_limits[2]+ diff(y_scale_limits)*0.15)
     do.call(what=mtext,args=c(args,par_l))
     
     if(trace_0.line) abline(0,0, lty=2) 

@@ -63,6 +63,7 @@ NULL
 
 plot.thornthwaite<-function(x, save_dir=NULL, format=NULL, variables=c("Precipitation","Et0","Storage","Prec. - Evap.","Deficit","Surplus"), title=TRUE, trace_grid=TRUE, st_name=NULL, u_y_scale_magn=0.2, l_y_scale_magn=0, leg_pos="topleft", ...)
 {
+  month_names<-c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
   q_list <- x
   for(v in variables)
   {
@@ -85,7 +86,7 @@ plot.thornthwaite<-function(x, save_dir=NULL, format=NULL, variables=c("Precipit
               print("Incorrect graphic format", quote=FALSE)
     }
     
-    args<-list(x=as.vector(t(d.f.[1,])), main=chart_title, xlab="Months", ylab="[mm]", ylim=y_scale_limits, type="b")
+    args<-list(x=as.vector(t(d.f.[1,])), main=chart_title, xlab="", ylab="[mm]", ylim=y_scale_limits, type="b", lab=c(12,5,7), xaxt="n")
     par_l_temp<-par_l
     if(length(par_l) > 0)
       par_l_temp[indices_par_gr]<-lapply(X=par_l_temp[indices_par_gr], FUN=function(x, ii){x[ii]}, ii=1)
@@ -93,6 +94,7 @@ plot.thornthwaite<-function(x, save_dir=NULL, format=NULL, variables=c("Precipit
     options(warn=-1)
     
     do.call(what=plot, args=c(args, par_l_temp))
+    axis(side=1, labels=month_names, at=1:12)
     for(i in 2:(nrow(d.f.)))
     {
       args<-list(x=as.vector(t(d.f.[i,])), type="b")

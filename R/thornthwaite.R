@@ -80,7 +80,7 @@ NULL
 #' }
 #' names(thornt_lst)<-names(lista_cli)
 #'   
-#' # split the list into two lists
+#' # splits list into two lists
 #' W_balance<-NULL; quantiles<-NULL
 #' for(k in 1 : length(lista_cli))
 #' {
@@ -136,7 +136,7 @@ thornthwaite <- function(series,  latitude, clim_norm=NULL, first.yr=NULL, last.
       zzz$Tx1[is.na(zzz$Tx1)]<-clim_norm$Tx[is.na(zzz$Tx1)]
     }
     # check on residual missing values
-    if(sum(is.na(zzz$Prec1))!=0 | sum(is.na(zzz$Tmean1))!=0) print(paste("Missing monthly values in year", first.yr+ii-1), quote=FALSE) else
+    if(sum(is.na(zzz$Prec1))!=0 | sum(is.na(zzz$Tmean1))!=0) print(paste("Monthly values missing in year", first.yr+ii-1), quote=FALSE) else
     {
       Prec  <-zzz[,1]
       Tmean <-zzz[,2]

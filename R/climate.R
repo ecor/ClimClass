@@ -36,7 +36,10 @@ climate <- function(series, first.yr=NULL, last.yr=NULL, max.perc.missing)
   if(is.null(last.yr)) last.yr <- max(series$year) 
   series_period<-series[series$year>=first.yr & series$year<=last.yr,]  
   series_cli_med<-aggregate(series_period, by=list(series_period$month), FUN=mean, na.rm=T)[-(1:2)]
-  series_abs_Tn<-aggregate(series_period, by=list(series_period$month), FUN=min, na.rm=T)$Tn
+  if(sum(!is.na(series_period$Tn)) >0 & "Tn" %in% names(series_period))
+    series_abs_Tn<-aggregate(data.frame(series_period$month, series_period$Tn), by=list(series_period$month), FUN=min, na.rm=T)[3] else
+    series_abs_Tn<-as.numeric(rep(NA,12))
+  names(series_abs_Tn)<-"AbsTn"
   missing<-aggregate(series_period, by=list(series_period$month), FUN=function(x) 
     {count<-sum(is.na(x))
      return(count)} )[-(1:3)]
@@ -44,6 +47,6 @@ climate <- function(series, first.yr=NULL, last.yr=NULL, max.perc.missing)
   if("Tn" %in% names(series) & "Tx" %in% names(series) & !"Tm" %in% names(series)) 
     series_cli<-round(data.frame(series_cli_med, Tm=(series_cli_med$Tn + series_cli_med$Tx)/2, AbsTn=series_abs_Tn), 1) else
       series_cli<-round(data.frame(series_cli_med, AbsTn=series_abs_Tn), 1)
+  if("Tn" %in% names(series)) series_cli$AbsTn[is.na(series_cli$Tn)]<-NA
   return(series_cli)
 }
-

@@ -2,7 +2,7 @@
 \alias{ExAtRa}
 \title{Extra-Atmospheric Radiation}
 \usage{
-ExAtRa(DOY, latitude, Gsc = 0.082, unit = "mm", T = 12)
+  ExAtRa(DOY, latitude, Gsc = 0.082, unit = "mm", T = 12)
 }
 \arguments{
   \item{DOY}{day of the year.}
@@ -19,20 +19,21 @@ ExAtRa(DOY, latitude, Gsc = 0.082, unit = "mm", T = 12)
   \item{T}{temperature in degrees C. Default is 12.}
 }
 \value{
-The daily extra-atmospheric solar radiation energy,
-espressed either in MJ or in mm of evaporated water.
+  The daily extra-atmospheric solar radiation energy,
+  espressed either in MJ or in mm of evaporated water.
 }
 \description{
-Calculates Extra-Atmospheric Radiation. Called by function
-\code{\link{arid}} for Thornthwaite's index.
+  Calculates Extra-Atmospheric Radiation. Called by
+  function \code{\link{arid}} for Thornthwaite's index.
 }
 \details{
-If \code{unit} = "mm", the calculated value represents the
-water height evaporated by solar radiation, calculated by
-the latent heat for vaporization. Otherwise (\code{unit} =
-"MJ") output is the solar radiation energy in MJ.
-Temperature \code{T} is used only for the assessment of
-latent heat of vaporization, when \code{unit} = "mm".
+  If \code{unit} = "mm", the calculated value represents
+  the water height evaporated by solar radiation,
+  calculated by the latent heat for vaporization. Otherwise
+  (\code{unit} = "MJ") output is the solar radiation energy
+  in MJ. Temperature \code{T} is used only for the
+  assessment of latent heat of vaporization, when
+  \code{unit} = "mm".
 }
 \examples{
 data(Trent_climate)
@@ -43,12 +44,12 @@ yDay     <- posixlt$yday+1  # field yday starts from 0
 latitude<-46
 
 # generates 12 values, one for each month
-coeff_Hargr<- ExAtRa(DOY=yDay,latitude=latitude, unit="mm")
+coeff_rad<- ExAtRa(DOY=yDay,latitude=latitude, unit="mm")
 }
 \author{
-Emanuele Eccel
+  Emanuele Eccel
 }
 \seealso{
-\code{\link{arid}}
+  \code{\link{arid}}
 }
 

@@ -2,7 +2,8 @@ NULL
 #' @description Calculates aridity according to several indices.
 #' 
 #' @param clim_norm climatic normals
-#' @param coeff_Hargr mean monthly solar radiation; used only for Thornthwaite's annual index Im. Default is \code{NULL}
+#' @param coeff_rad mean monthly solar radiation; used only for Thornthwaite's annual index Im. Default is \code{NULL}
+#' @param coeff_Hargr (vector of monthly) correction coefficient(s) for Hargreaves' equation
 #' @param monthly logic. Sets calculation to the monthly mode if \code{TRUE}. Default is \code{FALSE}.
 #' @param indices set of aridity indices to be listed. Default is all indices (1 to 6 for annual, 1 to 2 for monthly).
 #'
@@ -13,7 +14,17 @@ NULL
 #'
 #' @details \code{clim_norm} is a monthly data frame of climate normals, with column names: "P", "Tn", "Tx", "Tm" (precipitation, minimum, maximum and mean temperature, respectively). It can be the output of function \code{\link{climate}}.
 #' 
-#' \code{coeff_Hargr} corresponds to the mean monthly extra-atmospheric radiation (see function ExAtRa). It is needed only by Thornthwaite's annual index Im. 
+#' Monthly potential evapotranspiration (PE) is calculated via the Hargreaves' formula (Hargreaves and Samani, 1985):
+#' 
+#' PE = (0.0023*(clim_norm$Tx - clim_norm$Tn)^(0.5)*(clim_norm$Tm+17.8)*coeff_rad)* lmv * coeff_Hargr
+#' 
+#' where Tn, Tx, Tm are min, max, and mean temperatures, respectively, and lmv is the number of days in any month.
+#' 
+#' \code{coeff_rad} and \code{coeff_Hargr} are needed only by Thornthwaite's annual index \code{Im} and UNEP's \code{Ai} index, whose PE term is calculated via Hargreaves' equation.
+#' 
+#' \code{coeff_rad} corresponds to the mean monthly extra-atmospheric radiation (see function \code{\link{ExAtRa}}). 
+#' 
+#' \code{coeff_Hargr} is either a single value or a vector of 12 coefficients to adjust Hargreaves' estimation of potential evapotranspiration (implemented in \code{Im} and \code{Ai} indices). From calibration in 6 stations from the same network of \code{\link{Trent_climate}}, its average value is 0.75.
 #' 
 #' When \code{monthly} is \code{TRUE}, a data frame with monthly detail is generated for one station, instead of a synthetic single-line data frame.
 #' 
@@ -39,6 +50,8 @@ NULL
 #' De Martonne E., 1925: Traite de Geographie Physique: 3 tomes, Paris.
 #'
 #' Emberger, L., 1955. Une classification biogeographique des climats. Receuil des travaux des laboratoires de botanique, geologie et zoologie de la faculte des sciences de l'universite de Montpellier (Serie Botanique), Fascicule 7, 3-43.
+#' 
+#' Hargreaves, G.H., and Samani, Z.A., 1985. Reference crop evapotranspiratin from temperature. Applied Engineering in Agriculture, 1(2):96-99
 #'
 #' Lang, R., 1920. Verwitterung und Bodenbildung als Einfuehrung in die Bodenkunde. Schweizerbart Science Publishers, Stuttgart
 #'
@@ -54,15 +67,15 @@ NULL
 #' # clima_81_10 is a list of data frames having climatic means of temperature and precipitation 
 #' # as required by the aridity indices algorithms, each one referring to one station. 
 #' # It can be the output of function climate.
-#' # coeff_Hargr is a monthly vector of average daily extra-atmospheric solar radiation, 
+#' # coeff_rad is a monthly vector of average daily extra-atmospheric solar radiation, 
 #' # calculated e.g. by function ExAtRa.
 #' 
-#' aridity_Y<-lapply(clima_81_10, coeff_Hargr=coeff_Hargr, FUN=arid, monthly=FALSE, indices=c(1,2,5))
+#' aridity_Y<-lapply(clima_81_10, coeff_rad=coeff_rad, FUN=arid, monthly=FALSE, indices=c(1,2,5))
 #'
 #' @seealso \code{\link{climate}}, \code{\link{ExAtRa}}
 
 
-arid<- function(clim_norm, coeff_Hargr=NULL, monthly=FALSE, indices= 1:6)
+arid<- function(clim_norm, coeff_rad=NULL, coeff_Hargr = rep(0.75,12), monthly=FALSE, indices= 1:6)
 {
   # yearly indices
   if(monthly == FALSE)
@@ -78,7 +91,7 @@ arid<- function(clim_norm, coeff_Hargr=NULL, monthly=FALSE, indices= 1:6)
     Io <- 10 * sum(clim_norm$P[clim_norm$Tm >0]) / sum(clim_norm$Tm[clim_norm$Tm >0] * 10)
     # Thornthwaite (calculation of ET according to Hargreaves)
     lmv<-c(31,28.25,31,30,31,30,31,31,30,31,30,31)
-    ET_hargr<- (0.0023*(clim_norm$Tx - clim_norm$Tn)^(0.5)*(clim_norm$Tm+17.8)*coeff_Hargr)* lmv
+    ET_hargr<- (0.0023*(clim_norm$Tx - clim_norm$Tn)^(0.5)*(clim_norm$Tm+17.8)*coeff_rad)* lmv * coeff_Hargr
     Im_y<-100*(sum(clim_norm$P) / sum(ET_hargr) -1)
     # UNEP 1997
     Ai <- sum(clim_norm$P) / sum(ET_hargr) 

@@ -20,7 +20,8 @@
 ###############################################################################
 library(roxygen2)
 
-path <- "/Users/ecor/Dropbox/R-packages"
+#path <- "d:/Documents and Settings/eccele/Documenti/R/R_github"
+path <- "d:/R_github"
 pkg_name <- "ClimClass"
 pkg_dir <- paste(path,pkg_name,sep="/")
 
@@ -50,7 +51,11 @@ if (pkg_name %in% oo[,"Package"]) {
 	
 	install.packages(pkg_dir,type="source",repos=NULL)
 }
+
 ## 
+library(ClimClass)
+## 
+
 toCran <- TRUE
 
 
@@ -78,9 +83,27 @@ if (toCran) {
 
 
 
+#############################################
+# ESEGUI CONTROLLI (CHECK)
+#############################################
 
+library(devtools)
 
+rm(list=ls())
+data(Trent_climate)
 
+#setwd("d:/Documents and Settings/eccele/Documenti/R/procedure/IndiClima/ClimClass")
+setwd("d:/R_github/toCran/ClimClass")
 
+check(document=F)
+
+#############################################
+# INSTALLA IL PACCHETTO CLIMCLASS DA GITHUB
+#############################################
+
+library(devtools)
+install_github("ClimClass",username="ecor")
+
+library(ClimClass)
 
 
