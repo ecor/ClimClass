@@ -7,8 +7,7 @@ Author: Emanuele Eccel, Emanuele Cordano, Giambattista Toller
 Maintainer: Emanuele Eccel <emanuele.eccel@fmach.it>
 Description: Classification of climate according to Koeppen - Geiger, of
     aridity indices, of continentality indices, and of water balance after
-    Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen,
-    Walter-Lieth.
+    Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.
 License: GPL (>= 2)
 Depends:
     R(>= 2.10.0),geosphere,ggplot2,reshape2
