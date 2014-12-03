@@ -1,31 +1,29 @@
-# TODO: Add comment
-# 
-# Author: ecor
-###############################################################################
 NULL
 #' as.datcli
 #' 
-#' @description Tranforms a Data Frame (see example dataset) into a data frame format like  'datcli' in 'climatol' package
+#' @description Tranforms a data frame (see example dataset) into a data frame format like  '\code{datcli}' in '\code{climatol}' package
 #' 
-#' @param df data frame or a list 
-#' @param station name of the considered station
+#' @param df data frame or list 
+#' @param station name
 #' @param MonthField character string for month field in \code{df}. Default is \code{"month"}.
 #' @param PrecField character string for Mean Precipitation field in \code{df}. Default is \code{"P"}.
 #' @param MinTempField character string  for Mean Daily Minimum Temperature field in \code{df}. Default is \code{"Tn"}.
 #' @param MaxTempField character string  for Mean Daily Maximum Temperature field in \code{df}. Default is \code{"Tx"}.
 #' @param MeanTempField character string for Mean Daily Maximum Temperature field in \code{df}. Default is \code{"Tm"}.
 #' @param AbsMinTempField character string for Absolute Monthly Minimum Temperature field in \code{df}. Default is \code{"AbsTn"}. 
-#' @param AbsMinTempOffset estimated offset between Average Min Temperature and  Absolute Max Temperature.
+#' @param AbsMinTempOffset estimated offset between Average Min Temperature and  Absolute Min Temperature.
 #' @param StationField  character string for Station  field in \code{df}. Default is \code{"station"}.
 #'    
+#' @author Emanuele Cordano
+#' 
 #' @export
 #' @seealso \url{http://www.climatol.eu/}, \url{http://www.zoolex.org/walter.html}
 #' 
 #' @examples 
 #' 
 #' ### Not Run!! 
-#' ### Install 'climatol' from 'http://www.climatol.eu/'
-#' ### Then load the load the package and you can uncomment and run the following line
+#' # Install 'climatol' from 'http://www.climatol.eu/' first
+#' ### Then load the package, uncomment and run the following line
 #' # library(climatol)
 #' 
 #'  data(Trent_climate)
@@ -37,13 +35,13 @@ NULL
 #' datcli <- as.datcli(TrentinoClimateDf,station=station)
 #' 
 #' ### Not Run!! 
-#' ### Install 'climatol' from 'http://www.climatol.eu/'
-#' ### Then load the load the package and you can uncomment and run the following line
+#' # Install 'climatol' from 'http://www.climatol.eu/' first
+#' ### Then load the package, uncomment and run the following line
 #' # diagwl(datcli,est=station,alt=100,per="Period",mlab="en") ## plots a Walter-Lieth's climograph
 #' 
 
 
-as.datcli <- function(df,station="T0009",MonthField="month",
+as.datcli <- function(df,station,MonthField="month",
 		     PrecField="P",
 			 MinTempField="Tn",
 			 MaxTempField="Tx",
@@ -56,7 +54,7 @@ as.datcli <- function(df,station="T0009",MonthField="month",
 		 if (length(station)>1)	 {
 			 
 			 station <- station[1]
-			 warning("Only fist station is considered!!!")
+			 warning("Only first station is considered!")
 		 }
 		 
 		 if (is.data.frame(df)) {
@@ -67,7 +65,7 @@ as.datcli <- function(df,station="T0009",MonthField="month",
 		 }
 		 if  (!(AbsMinTempField %in% names(out))) {
 			 
-			 warning("Missing information about absolute Monthly Minimum Temperature, somehow deduced!!!")
+			 warning("Missing absolute Monthly Minimum Temperature: calculated by AbsMinTempOffset!")
 			 out[,AbsMinTempField] <- out[,MinTempField]-AbsMinTempOffset
 		 }
 		 
