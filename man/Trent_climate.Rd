@@ -20,7 +20,7 @@
 
 \code{clima_81_10} a list (one table for each station) of 40 monthly climatic normals of precipitation and temperature (minimum, maximum, and mean) for the climatic period 1981 - 2010. It has been calculated by function \code{\link{climate}}.
 
-\code{thornt_lst} an S3 object: a "hyperlist" (list of lists of lists), one list of lists for each station. For every station, the first list (\code{Thornth._W._bal}) reports the monthly series of water balance quantities for the station, each in one data frame (see function thornthwaite for details). The second list (\code{quantiles}) reports the monthly quantiles for the same quantities.
+\code{thornt_lst} an S3 object: a "hyperlist" (list of lists of lists), one list of lists for each station. For every station, the first list (\code{Thornth._W._bal}) reports the monthly series of water balance quantities for the station, each in one data frame (see function \code{\link{thornthwaite}} for details). The second list (\code{quantiles}) reports the monthly quantiles for the same quantities.
  
 \code{W_balance} is the first list (\code{W_balance}) in \code{thornt_lst} organized according to stations. See Examples in function \code{\link{thornthwaite}} for its construction.
 
