@@ -32,7 +32,7 @@ Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \c
 
 The data set included in the library is formed by monthly time series of temperature and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento - Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are calculated, too (output of function \code{\link{climate}}). The output of function \code{\link{thornthwaite}} is present in the data set \code{\link{Trent_climate}}, as input for function \code{\link{plot}}. 
 
-Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{\link{arid_ind_tables}} and \code{\link{contin_ind_tables}}, respectively).
+Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{\link{arid_ind_tables}} and \code{\link{continental_ind_tables}}, respectively).
 
 }
 \author{

@@ -2,15 +2,15 @@
 \alias{as.datcli}
 \title{as.datcli}
 \usage{
-as.datcli(df, station = "T0009", MonthField = "month", PrecField = "P",
+as.datcli(df, station, MonthField = "month", PrecField = "P",
   MinTempField = "Tn", MaxTempField = "Tx", MeanTempField = "Tm",
   AbsMinTempField = "AbsTn", AbsMinTempOffset = 4,
   StationField = "station")
 }
 \arguments{
-  \item{df}{data frame or a list}
+  \item{df}{data frame or list}
 
-  \item{station}{name of the considered station}
+  \item{station}{name}
 
   \item{MonthField}{character string for month field in
   \code{df}. Default is \code{"month"}.}
@@ -35,33 +35,40 @@ as.datcli(df, station = "T0009", MonthField = "month", PrecField = "P",
   is \code{"AbsTn"}.}
 
   \item{AbsMinTempOffset}{estimated offset between Average
-  Min Temperature and Absolute Max Temperature.}
+  Min Temperature and Absolute Min Temperature.}
 
   \item{StationField}{character string for Station field in
   \code{df}. Default is \code{"station"}.}
 }
 \description{
-Tranforms a Data Frame (see example dataset) into a data
-frame format like 'datcli' in 'climatol' package
+Tranforms a data frame (see example dataset) into a data
+frame format like '\code{datcli}' in '\code{climatol}'
+package
 }
 \examples{
 ### Not Run!!
-### Install 'climatol' from 'http://www.climatol.eu/'
-### Then load the load the package and you can uncomment and run the following line
+# Install 'climatol' from 'http://www.climatol.eu/' first
+### Then load the package, uncomment and run the following line
 # library(climatol)
-
+	library(stringr)
  data(Trent_climate)
- TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
- names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
+
+ TrentinoClimateDf <- do.call(rbind,clima_81_10)
+ names <- rownames(TrentinoClimateDf)
+ TrentinoClimateDf$station <-
+ unlist(lapply(X=str_split(names,pattern="[.]"),FUN=function(x) {x[1]}))
 
 
  station <- "T0129"
 datcli <- as.datcli(TrentinoClimateDf,station=station)
 
 ### Not Run!!
-### Install 'climatol' from 'http://www.climatol.eu/'
-### Then load the load the package and you can uncomment and run the following line
+# Install 'climatol' from 'http://www.climatol.eu/' first
+### Then load the package, uncomment and run the following line
 # diagwl(datcli,est=station,alt=100,per="Period",mlab="en") ## plots a Walter-Lieth's climograph
+}
+\author{
+Emanuele Cordano
 }
 \seealso{
 \url{http://www.climatol.eu/},

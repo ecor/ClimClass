@@ -35,10 +35,17 @@ NULL
 #' 
 #' @examples
 #' 
-#' 
+#' library(stringr)
 #' data(Trent_climate)
-#' TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
-#' names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
+#### #TrentinoClimateDf <- melt(clima_81_10,id=names(clima_81_10[[1]]))
+##### #names(TrentinoClimateDf)[names(TrentinoClimateDf)=="L1"] <- "station"
+#' 
+#' 
+#' TrentinoClimateDf <- do.call(rbind,clima_81_10)
+#' names <- rownames(TrentinoClimateDf)
+#' TrentinoClimateDf$station <- unlist(lapply(X=str_split(names,pattern="[.]"),FUN=function(x) {x[1]}))
+#'  
+#' 
 #' 
 #' data <- TrentinoClimateDf[TrentinoClimateDf$station %in% unique(TrentinoClimateDf$station)[1:3],]
 #' p <- peguy(data=data)
