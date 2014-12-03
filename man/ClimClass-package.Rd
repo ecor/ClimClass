@@ -18,7 +18,7 @@ License: \tab GPL (>= 2)\cr
 }
 The package collects several criteria for climate classification. The most general is Koeppen - Geiger's classification, as described in Trewartha (1980), implemented in function \code{\link{koeppen_geiger}}. Almost all sub-classes have been considered, with the only exception of those whose attribution is based on qualitative assessment of climatic features. 
 
-A classic graphical visualization of temperature and precipitation, according to Bagnouls and Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This function is implemented in library \code{climatol}.
+A classic graphical visualization of temperature and precipitation, according to Bagnouls and Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This function is implemented in library \code{climatol} (http://www.climatol.eu/).
 
 Function \code{\link{arid}} calculates a set of six annual aridity indices (Emberger, 1955; Lang, R., 1920; Rivas - Martinez, (website); and UNEP, 1997; De Martonne, 1925; Thornthwaite, 1948). For the latter two also a monthly index is calculated.
 
@@ -32,7 +32,7 @@ Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \c
 
 The data set included in the library is formed by monthly time series of temperature and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento - Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are calculated, too (output of function \code{\link{climate}}). The output of function \code{\link{thornthwaite}} is present in the data set \code{\link{Trent_climate}}, as input for function \code{\link{plot}}. 
 
-Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{arid_ind_tables} and \code{contin_ind_tables}, respectively).
+Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{\link{arid_ind_tables}} and \code{\link{contin_ind_tables}}, respectively).
 
 }
 \author{
