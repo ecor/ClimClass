@@ -13,6 +13,10 @@ RDI(series, clim_norm = NULL, first.yr = NULL, last.yr = NULL,
 
 \item{clim_norm}{the reference climatic values for each month, used for gap filling. Default is \code{NULL} (no replacement of missing values)}
 
+\item{first.yr}{of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the first year of the series)}
+
+\item{last.yr}{of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the last year of the series)}
+
 \item{TAW}{total available water content of soil}
 
 \item{coeff_rad}{vector of solar radiation coefficients (12 values) for calculation of potential evapotranspiration}
@@ -20,10 +24,6 @@ RDI(series, clim_norm = NULL, first.yr = NULL, last.yr = NULL,
 \item{coeff_Hargr}{(vector of monthly) correction coefficient(s) for Hargreaves' equation}
 
 \item{quant}{vector of quantiles for the statistical ranking of the year representative for balance (0..1)}
-
-\item{first}{year of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the first year of the series)}
-
-\item{last}{year of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the last year of the series)}
 }
 \value{
 A two-column table reporting Riou's drought indices for each quantile chosen (one line each, minimum is 1). Both "harvest time" and minimum values
@@ -67,11 +67,11 @@ RDI(lista_cli[[1]], clim_norm=clima_81_10[[1]], first.yr=1981, last.yr=2010, coe
 Emanuele Eccel
 }
 \references{
-Riou, C. 1994. Le déterminisme climatique de la maturation du raisin: application au zonage de la teneur en sucre dans la Communauté Européenne (E Commission, Éd.).
-Office des Publications Officielles des Communautés Européennes, Luxembourg, 322p.
+Riou, C. 1994. Le determinisme climatique de la maturation du raisin: application au zonage de la teneur en sucre dans la Communaute Europeenne (E. Commission, ed.).
+Office des Publications Officielles des Communautes Europeennes, Luxembourg, 322p.
 
-Tonietto, J. 1999. Les Macroclimats Viticoles Mondiaux et l'Influence du Mésoclimat sur la Typicité de la Syrah et du Muscat de Hambourg dans le Sud de la France
-Méthodologie de Caractérisation. Thèse de doctorat, Ecole Nationale Supérieure Agronomique de Montpellier, Montpellier (France), 216p.
+Tonietto, J. 1999. Les Macroclimats Viticoles Mondiaux et l'Influence du Mesoclimat sur la Typicite de la Syrah et du Muscat de Hambourg dans le Sud de la France
+Methodologie de Caracterisation. These de doctorat, Ecole Nationale Superieure Agronomique de Montpellier, Montpellier (France), 216p.
 }
 \seealso{
 \code{\link{oiv_ind}},  \code{\link{arid}}

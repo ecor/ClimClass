@@ -3,7 +3,7 @@
 \alias{ClimClass}
 \docType{package}
 \title{
-Climate classifications and graphics
+Climate and bio-climate classifications and graphics
 }
 \description{
 Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.
@@ -25,7 +25,7 @@ Thornthwaite's method for the assessment of soil water balance (Thornthwaite, 19
 The assessment of potential evapotranspiration by Thornthwaite and Mather's algorithm requires the estimation of extra-atmospheric radiation, which is calculated by function \code{\link{ExAtRa}}, based on the algorithm of Allen et al., 2005.
 Function \code{\link{as.datcli}} tranforms a data frame as in example dataset \code{\link{Trent_climate}} into a data frame format like \code{datcli} in \code{climatol} package. It can be used to plot Walter - Lieth's climographs (see examples documentation).
 
-Function \code{\link{oiv_ind}} calculates several bioclimatic indices for viticulture proposed by the International Organization of Viticuture, OIV (ref.: http://www.oiv.int/oiv/info/enresolution2012?lang=en), plus one index (Branas). 
+Function \code{\link{oiv_ind}} calculates several bioclimatic indices for viticulture proposed by the International Organization of Viticuture, OIV (Resolution OIV-VITI 423-2012), plus one index (Branas). 
 
 One index of OIV's list, Riou's drought index, needing daily series, is calculated by another function, \code{\link{RDI}}.
 
@@ -44,7 +44,7 @@ Conrad, V. 1946: Usual formulas of continentality and their limits of validity. 
 De Martonne E., 1925: Traite de Geographie Physique: 3 tomes, Paris.
 Emberger, L., 1955: Une classification biogeographique des climats. Receuil des travaux des laboratoires de botanique, geologie et zoologie de la faculte des sciences de l'universite de Montpellier (Serie Botanique), Fascicule 7, 3-43.
 Eynard, I. e Dal Masso, G., 1990: Viticoltura moderna. Manuale pratico. Hoepli Milano. 778 pp.
-Fregoni, C., et  Pezzutto, S., 2000: Principes et premières approches de l'indice bioclimatique de qualité Fregoni, Progr.Agric.Vitic. 117: 390-396.
+Fregoni, C., et  Pezzutto, S., 2000: Principes et premieres approches de l'indice bioclimatique de qualite Fregoni, Progr.Agric.Vitic. 117: 390-396.
 Gams, H., 1932: Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin. 
 Gladstones, J.S., 2004: Climate and Australian Viticulture. In 'Viticulture. Volume 1-Resources'. (Eds Dry PR, Coombe BG) pp. 90-118.
 Huglin, M.P., 1978: Nouveau mode d'evaluation des possibilites heliothermiques d'un milieu viticole. Comptes Rendus de l'Academie de l'Agriculture de France. 64: 1117-1126.
@@ -63,7 +63,7 @@ Tonietto, J., and Carbonneau, A., 2004: A multicriteria climatic classification 
 Trewartha, G.T. and Lyle, H.H., 1980: An Introduction to Climate. MacGraw - Hill, 5th Ed. Appendix: Koeppen's Classification of Climates.
 UNEP (United Nations Environment Programme), 1997: World atlas of desertification 2ED. UNEP, London
 }
-\keyword{"climate classification""}% __ONLY ONE__ keyword per line
+\keyword{"climate classification"}
 \keyword{Koeppen - Geiger}
 \keyword{Thornthwaite}
 \keyword{aridity}

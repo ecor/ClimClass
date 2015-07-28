@@ -10,6 +10,10 @@
 \alias{continental_ind_tables}
 \alias{lista_cli}
 \alias{coeff_rad}
+\alias{P}
+\alias{Tm}
+\alias{Tn}
+\alias{Tx}
 
 \title{Data set of Trentino climate} 
 \description{Data set for definition of climate of Trentino, Italy. It includes  monthly series of temperature and precipitation, and reference tables for definition of aridity and continentality / oceanicity. 
