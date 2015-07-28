@@ -14,7 +14,7 @@ NULL
 #' @param ... arguments to be passed to methods, such as graphical parameters (see \code{\link{par}}).
 #' 
 #' @method plot thornthwaite
-#' @S3method plot thornthwaite
+#' @export plot thornthwaite
 #' @aliases plot plot.thornthwaite
 #' 
 #' 
