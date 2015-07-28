@@ -21,13 +21,14 @@
 library(roxygen2)
 
 #path <- "d:/Documents and Settings/eccele/Documenti/R/R_github"
-path <- "d:/R_github"
+#path <- "d:/R_github"
+path<-"D:/Documenti/R/procedure/IndiClima"
 pkg_name <- "ClimClass"
 pkg_dir <- paste(path,pkg_name,sep="/")
 
 
-roxygenize(pkg_dir,roxygen.dir=pkg_dir,copy.package=FALSE,unlink.target=FALSE,overwrite=TRUE)
-
+#roxygenize(pkg_dir,roxygen.dir=pkg_dir,copy.package=FALSE,unlink.target=FALSE,overwrite=TRUE)
+roxygenize(package.dir=pkg_dir)
 
 ## installation
 oo <- installed.packages()
