@@ -5,7 +5,7 @@ NULL
 #' @param latitude station latitude in degrees. Used in Gorczynski's and Conrad's classifications (indices 1 and 2). Default is \code{NULL}.
 #' @param elevation station elevation in m. Used in Gams' classification (index 3). Default is \code{NULL}.
 #' @param Michalet_correction logic: if \code{TRUE}, Michalet's correction is applied to index 3 (Gams). Default is \code{FALSE}.
-#' @param indices set of aridity indices to be listed. Default is all indices (1 to 4).
+#' @param indices set of aridity indices to be listed. Default is all indices (1 to 5).
 #'
 #' @title Continentality indices
 #' 
@@ -24,6 +24,8 @@ NULL
 #' 3: Gams - alpha. (Gams, H., 1932). For Michalet's correction: Michalet and Souchier, 1991.
 #' 
 #' 4: Rivas-Martinez - Ic. (Rivas - Martinez, web page).
+#' 
+#' 5: Amann - H. (Amann, 1929)
 #'
 #' A reference for the continentality / oceanicity degree is given in the list object \code{continental_ind_tables} of data set \code{\link{Trent_climate}}.
 #'
@@ -32,11 +34,13 @@ NULL
 #' @export
 #'
 #' @references 
-#' Conrad, V. 1946: Usual formulas of continentality and their limits of validity. Transactions, American Geophysical Union, Volume 27, Issue 5, p. 663-664.
+#' Amann, J., 1929: L'hygrothermie du climat, facteur determinant la repartition des especes atlantiques. Revue Bryol., 56:126-133.
+#'
+#' Conrad, V., 1946: Usual formulas of continentality and their limits of validity. Transactions, American Geophysical Union, Volume 27, Issue 5, p. 663-664.
 #' 
-#' Gams, H., 1932. Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin.
+#' Gams, H., 1932: Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin.
 #' 
-#' Gorczynski, L. (1920) : Sur le calcul du degre de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
+#' Gorczynski, L., 1920: Sur le calcul du degre de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
 #' 
 #' Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage des forestiers. Departement SIAFEE, UFR Forets, Arbres et Milieux Naturels. ENGREF, Nancy Cedex.
 #' 
@@ -71,12 +75,15 @@ NULL
 #' @seealso \code{\link{climate}}
 
 
-contin<- function(clim_norm,  latitude=NULL, elevation=NULL, Michalet_correction=FALSE, indices= 1:4)
+contin<- function(clim_norm,  latitude=NULL, elevation=NULL, Michalet_correction=FALSE, indices= 1:5)
 {
   
   K.G <- NA
   K.C <- NA
   alpha <- NA
+  Ic <- NA
+  H <- NA
+  
   # Gorczynski & Conrad
   if(!is.null(latitude)) 
   {
@@ -92,9 +99,14 @@ contin<- function(clim_norm,  latitude=NULL, elevation=NULL, Michalet_correction
   # Rivas-Martinez
   Ic<-round((max(clim_norm$Tm) - min(clim_norm$Tm)),2)
   
-  continentality<-data.frame(K.G = K.G, K.C = K.C, alpha=alpha, Ic = Ic)
-  if(length(indices) != 4)
+  # Amann
+  
+  H <- round(sum(clim_norm$P) * mean(clim_norm$Tm) / (max(clim_norm$Tm)  - min(clim_norm$Tm)), 1)
+  
+  continentality<-data.frame(K.G = K.G, K.C = K.C, alpha=alpha, Ic = Ic, H=H)
+  if(length(indices) != 5)
     continentality<-continentality[indices]
+  
   
   return(continentality)  
 }
