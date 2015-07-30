@@ -3,13 +3,14 @@ NULL
 #' 
 #' @param clim_norm average values (climate normals) for the desired period.
 #' @param A_B_C_special_sub.classes logical. Sets if calculations have to consider sub-classes based on rain features in climate types A, B, and C  (see details). Default is \code{FALSE}.
-#' @param clim.resume_verbose logical. If \code{TRUE} (default) a resume of the climatic indices used for the Koeppen - Geiger classification are added to the output.
+#' @param clim.resume_verbose logical. If \code{TRUE} (default) a resume of the climatic indices used for the Koeppen - Geiger classification is added to the output.
+#' @param class.nr logical. If \code{FALSE} (default) class is expressed by letters, otherwise by numbers (see details).
 #' 
 #'
 #' @title Koeppen - Geiger's climate classification
 #' @author Emanuele Eccel
 #'
-#' @return A one-line data frame reporting a resume of climatic features useful for the classification, and one last field (1 type - or "climate" - plus 1 or 2 sub-types) reporting Koeppen - Geiger's climate classification. See details. 
+#' @return A one-line data frame reporting a resume of climatic features useful for the classification (if  \code{clim.resume_verbose} is \code{TRUE}), and one last field (1 type - or "climate" - plus 1 or 2 sub-types) reporting Koeppen - Geiger's climate classification. See details. 
 #'
 #' @details \code{clim_norm} is a monthly data frame of climate normals, with column names: "P", "Tn", "Tx", "Tm" (precipitation, minimum, maximum and mean temperature, respectively). It can be the output of function \code{\link{climate}}.
 #' 
@@ -51,8 +52,17 @@ NULL
 #' 
 #' \code{T_4th_w.m} = temperature of the 4th warmest month (degrees C)
 #' 
-#' \code{class} = climatic class, resulting from the merging of "climate" (A to E) and sub-type(s)
+#' \code{class} = climatic class. If \code{class.nr}=\code{FALSE} (default), it results from the merging of "climate" (A to E) and sub-type(s). 
+#' If \code{class.nr}=\code{TRUE} the class comes from the sum of the numeric equivalent of "type" (A,..E) + "first sub type" (only first letter),
+#' according to the following scheme:
+#'  A  B  C  D  E
+#'  10 20 30 40 50  
+#'  f  W  s  s  T   1        
+#'  w  S  w  w  F   2
+#'  m     f  f      3
 #'
+#' (e.g: Af = 11, Cw = 32, EF = 52)
+#' 
 #' @export
 #'
 #' @references 
@@ -67,8 +77,7 @@ NULL
 #'
 #' @seealso \code{\link{climate}}
 
-
-koeppen_geiger<-function (clim_norm, A_B_C_special_sub.classes = FALSE, clim.resume_verbose=TRUE) 
+koeppen_geiger<-function (clim_norm, A_B_C_special_sub.classes = FALSE, clim.resume_verbose=TRUE, class.nr=FALSE) 
 {
   
   if (sum(is.na(clim_norm$Tm)) > 0 | sum(is.na(clim_norm$P)) > 
@@ -247,9 +256,29 @@ koeppen_geiger<-function (clim_norm, A_B_C_special_sub.classes = FALSE, clim.res
       else sub.type_1 <- "F"
       sub.type_2 <- NULL
     }
-    matr_climate <- data.frame(paste(type, sub.type_1, sub.type_2, 
-                                     sep = ""))
+    if(class.nr == FALSE)
+      {
+      matr_climate <- data.frame(paste(type, sub.type_1, sub.type_2,sep = ""))
+      } else
+      {
+      types_numbers<-seq(10,50,by=10)
+      types_letters<-c("A","B","C","D","E")
+      type_n <-types_numbers[types_letters==type]
+      
+      if(type=="A") types.2_letters<-c("f","w","m")
+      if(type=="B") types.2_letters<-c("W","S")
+      if(type=="C" | type=="D") types.2_letters<-c("s","w","f")
+      if(type=="E") types.2_letters<-c("T","F")
+      
+      types.2_numbers<- 1:length(types.2_letters)
+      
+      type.2_n<-types.2_numbers[types.2_letters==sub.type_1]
+      
+      matr_climate <- data.frame(type_n + type.2_n)
+      }
+    
     names(matr_climate) <- "class"
+    
     if(clim.resume_verbose == TRUE) matr_climate <- data.frame(matr_indices, matr_climate)
     return(matr_climate)
   }
