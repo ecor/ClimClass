@@ -3,8 +3,8 @@ NULL
 #' 
 #' @param series series of mean monthly weather values
 #' @param clim_norm the reference climatic values for each month, used for gap filling. Default is \code{NULL} (no replacement of missing values)
-#' @param first year of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the first year of the series)
-#' @param last year of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the last year of the series)
+#' @param first.yr of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the first year of the series)
+#' @param last.yr of the period over which water balance is calculated. Default is  \code{NULL} (calculations start with the last year of the series)
 #' @param TAW total available water content of soil
 #' @param coeff_rad vector of solar radiation coefficients (12 values) for calculation of potential evapotranspiration
 #' @param coeff_Hargr (vector of monthly) correction coefficient(s) for Hargreaves' equation
@@ -47,11 +47,11 @@ NULL
 #' @export
 #' 
 #' @references
-#' Riou, C. 1994. Le déterminisme climatique de la maturation du raisin: application au zonage de la teneur en sucre dans la Communauté Européenne (E Commission, Éd.).
-#' Office des Publications Officielles des Communautés Européennes, Luxembourg, 322p.
+#' Riou, C. 1994. Le determinisme climatique de la maturation du raisin: application au zonage de la teneur en sucre dans la Communaute Europeenne (E. Commission, ed.).
+#' Office des Publications Officielles des Communautes Europeennes, Luxembourg, 322p.
 #' 
-#' Tonietto, J. 1999. Les Macroclimats Viticoles Mondiaux et l'Influence du Mésoclimat sur la Typicité de la Syrah et du Muscat de Hambourg dans le Sud de la France 
-#' Méthodologie de Caractérisation. Thèse de doctorat, Ecole Nationale Supérieure Agronomique de Montpellier, Montpellier (France), 216p.
+#' Tonietto, J. 1999. Les Macroclimats Viticoles Mondiaux et l'Influence du Mesoclimat sur la Typicite de la Syrah et du Muscat de Hambourg dans le Sud de la France 
+#' Methodologie de Caracterisation. These de doctorat, Ecole Nationale Superieure Agronomique de Montpellier, Montpellier (France), 216p.
 #' 
 #' @examples
 #' data(Trent_climate)

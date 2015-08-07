@@ -12,6 +12,7 @@ NULL
 #' @param quant_Tn_rest quantile (0..1) for the choice of the position of the representative year in the series, referred to the minimum temperature during "rest" period. Default is 0.5 (median)
 #' @param quant_Tn_veg quantile (0..1) for the choice of the position of the representative year in the series, referred to the minimum temperature during the "vegetative" period. Default is 0.5 (median)
 #' @param quant_Tx_veg quantile (0..1) for the choice of the position of the representative year in the series, referred to the maximum temperature during the "vegetative" period. Default is 0.5 (median)
+#' @param indices set of OIV indices to be listed. Default is all indices (1 to 10). See details for numbered list of indices.
 #' 
 #' @title OIV bioclimatic indices for viticulture
 #' @author Emanuele Eccel
@@ -26,20 +27,29 @@ NULL
 #'  \code{daily_Tm} is calculated as the mean of  \code{daily_Tn} and  \code{daily_Tx}.
 #'
 #' OIV indices are the following:
-#' \code{Tm_veg}: mean temperature during vegetation period. The latter is April - October (N emisphere) or October - April (S emisphere). The case (N or S) is automatically recognised by temperature data.
-#' \code{WI}: Winkler index (degree days with a 10 C base, summation over vegetative period), see note on \code{Tm_veg}. Ref: Amerine and Winkler, 1944.
-#' \code{BEDD}: biologically active degree days. Degree days with a lower threhold of 10 C and an upper threshold at 19 C. Ref: Gladstone, 2004.
-#' \code{HI}: heliothermic Huglin index. A degree day summation of the average between  mean and maximum temperature above 10 C, corrected by a coefficient of daylength duration.
+#' \code{Tm_veg}: 1 - mean temperature during vegetation period. The latter is April - October (N emisphere) or October - April (S emisphere). The case (N or S) is automatically recognised by temperature data.
+#' 
+#' \code{WI}: 2 - Winkler index (degree days with a 10 C base, summation over vegetative period), see note on \code{Tm_veg}. Ref: Amerine and Winkler, 1944.
+#' 
+#' \code{BEDD}: 3 - biologically active degree days. Degree days with a lower threhold of 10 C and an upper threshold at 19 C. Ref: Gladstone, 2004.
+#' 
+#' \code{HI}: 4 - heliothermic Huglin index. A degree day summation of the average between  mean and maximum temperature above 10 C, corrected by a coefficient of daylength duration.
 #' The coefficient is given by the author in a table according to latitude. If one value is given, it is used for all stations. Default is 1.04 (lat. 44-46). Ref.: Huglin, P., 1978
-#' \code{CNI}: cool night index. Mean of September (N emisphere) or March (S emisphere) minimum temperatures. Ref.: Tonietto and Carbonneau, 2004.
-#' \code{FSI}: Fregoni's simplified index. Given by the product between the summation of thermal range (Tx - Tn) and the number of days with Tm > 10 C, for 30 days before ripening.
+#' \code{CNI}: 5 - cool night index. Mean of September (N emisphere) or March (S emisphere) minimum temperatures. Ref.: Tonietto and Carbonneau, 2004.
+#' 
+#' \code{FSI}: 6 - Fregoni's simplified index. Given by the product between the summation of thermal range (Tx - Tn) and the number of days with Tm > 10 C, for 30 days before ripening.
 #' The period before ripening is taken as September (N emisphere) or March (S emisphere). Ref.: Fregoni et Pezzutto, 2000.
-#' \code{BI}: Branas' hydrothermic index. The only index not included in OIV list, used for fungine infection proneness. 
+#' 
+#' \code{BI}: 7 - Branas' hydrothermic index. The only index not included in OIV list, used for fungine infection proneness. 
 #' It is given by the product of precipitation (mm) by the mean temperature (C) during the period April - October (N emisphere) or October - April (S emisphere). Ref: Eynard and Dal Masso, 1990.
-#' \code{Tn_rest}: mean of minimum temperature during rest period. Useful for assessing winter severity. The rest period is November - March (N emisphere) or May - September (S emisphere). 
+#' 
+#' \code{Tn_rest}: 8 - mean of minimum temperature during rest period. Useful for assessing winter severity. The rest period is November - March (N emisphere) or May - September (S emisphere). 
 #' The case (N or S) is automatically recognised by temperature data.
-#' \code{Tn_veg}: mean of minimum temperature during vegetative period. Useful for assessing spring frosts. See note on \code{Tm_veg} for periods.
-#' \code{Tx_veg}: mean of maximum temperature during vegetative period. Useful for assessing summer hot spells. See note on \code{Tm_veg} for periods.
+#' 
+#' \code{Tn_veg}: 9 - mean of minimum temperature during vegetative period. Useful for assessing spring frosts. See note on \code{Tm_veg} for periods.
+#' 
+#' \code{Tx_veg}: 10 - mean of maximum temperature during vegetative period. Useful for assessing summer hot spells. See note on \code{Tm_veg} for periods.
+#' 
 #' \code{quant_Tn_rest}, \code{quant_Tn_veg}, \code{quant_Tx_veg} define the statistical rank of the year to be chosen as representative for assessing \code{Tn_rest},
 #' \code{Tn_veg}, and \code{Tx_veg}, respectfully. 0.5 (default) is the median year, 0 is the minimum (lowest temperature), 1 is the maximum (highest temperature).
 #'  
@@ -62,7 +72,7 @@ NULL
 #' @seealso \code{\link{RDI}}
 
 
-oiv_ind<-function (daily_Tn=NULL,daily_Tx=NULL,daily_Tm=NULL, daily_P=NULL, first.yr=NULL, last.yr=NULL, subs_missing=TRUE, coeff_HI=1.04, quant_Tn_rest=0.5,quant_Tn_veg=0.5,quant_Tx_veg=0.5)
+oiv_ind<-function (daily_Tn=NULL,daily_Tx=NULL,daily_Tm=NULL, daily_P=NULL, first.yr=NULL, last.yr=NULL, subs_missing=TRUE, coeff_HI=1.04, quant_Tn_rest=0.5,quant_Tn_veg=0.5,quant_Tx_veg=0.5, indices=1:10)
   
 {
   
@@ -305,6 +315,9 @@ oiv_ind<-function (daily_Tn=NULL,daily_Tx=NULL,daily_Tm=NULL, daily_P=NULL, firs
     # creates a general table
     oiv_indic_table<-cbind(Tm_veg,winkler_mean,BEDD_mean,HI_mean,CNI_mean,FSI_mean,BI_mean,Tn_rest_quantile,Tn_veg_quantile,Tx_veg_quantile)
     colnames(oiv_indic_table)<-c("Tm_veg", "WI", "BEDD", "HI", "CNI", "FSI", "BI", "Tn_rest", "Tn_veg", "Tx_veg")
+    
+    if(length(indices) != 10)
+      oiv_indic_table<-oiv_indic_table[,indices]
     
     return(oiv_indic_table)
   }

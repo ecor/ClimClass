@@ -5,17 +5,19 @@
 \title{Koeppen - Geiger's climate classification}
 \usage{
 koeppen_geiger(clim_norm, A_B_C_special_sub.classes = FALSE,
-  clim.resume_verbose = TRUE)
+  clim.resume_verbose = TRUE, class.nr = FALSE)
 }
 \arguments{
 \item{clim_norm}{average values (climate normals) for the desired period.}
 
 \item{A_B_C_special_sub.classes}{logical. Sets if calculations have to consider sub-classes based on rain features in climate types A, B, and C  (see details). Default is \code{FALSE}.}
 
-\item{clim.resume_verbose}{logical. If \code{TRUE} (default) a resume of the climatic indices used for the Koeppen - Geiger classification are added to the output.}
+\item{clim.resume_verbose}{logical. If \code{TRUE} (default) a resume of the climatic indices used for the Koeppen - Geiger classification is added to the output.}
+
+\item{class.nr}{logical. If \code{FALSE} (default) class is expressed by letters, otherwise by numbers (see details).}
 }
 \value{
-A one-line data frame reporting a resume of climatic features useful for the classification, and one last field (1 type - or "climate" - plus 1 or 2 sub-types) reporting Koeppen - Geiger's climate classification. See details.
+A one-line data frame reporting a resume of climatic features useful for the classification (if  \code{clim.resume_verbose} is \code{TRUE}), and one last field (1 type - or "climate" - plus 1 or 2 sub-types) reporting Koeppen - Geiger's climate classification. See details.
 }
 \description{
 General climate classification after Koeppen - Geiger.
@@ -61,7 +63,16 @@ The returned data frame contains the following fields:
 
 \code{T_4th_w.m} = temperature of the 4th warmest month (degrees C)
 
-\code{class} = climatic class, resulting from the merging of "climate" (A to E) and sub-type(s)
+\code{class} = climatic class. If \code{class.nr}=\code{FALSE} (default), it results from the merging of "climate" (A to E) and sub-type(s).
+If \code{class.nr}=\code{TRUE} the class comes from the sum of the numeric equivalent of "type" (A,..E) + "first sub type" (only first letter),
+according to the following scheme:
+ A  B  C  D  E
+ 10 20 30 40 50
+ f  W  s  s  T   1
+ w  S  w  w  F   2
+ m     f  f      3
+
+(e.g: Af = 11, Cw = 32, EF = 52)
 }
 \examples{
 data(Trent_climate)

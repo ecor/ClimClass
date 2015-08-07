@@ -13,7 +13,7 @@ Classification of climate according to Koeppen - Geiger, of aridity indices, of 
 Package: \tab ClimClass\cr
 Type: \tab Package\cr
 Version: \tab 2.0\cr
-Date: \tab 2015-07-31\cr
+Date: \tab 2015-08-06\cr
 License: \tab GPL (>= 2)\cr
 }
 The package collects several criteria for climate classification. The most general is Koeppen - Geiger's classification, as described in Trewartha (1980), implemented in function \code{\link{koeppen_geiger}}. Almost all sub-classes have been considered, with the only exception of those whose attribution is based on qualitative assessment of climatic features. 
@@ -31,37 +31,67 @@ One index of OIV's list, Riou's drought index, needing daily series, is calculat
 
 The data set included in the library is formed by monthly and daily time series of temperature and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento - Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are calculated, too (output of function \code{\link{climate}}). The output of function \code{\link{thornthwaite}} is present in the data set \code{\link{Trent_climate}}, as input for function \code{\link{plot}}. 
 Reference tables for aridity and continentality indices are provided as lists, to rank the classifications on standard scales (\code{\link{arid_ind_tables}} and \code{\link{continental_ind_tables}}, respectively).
+
+See a first application in Eccel et al., 2015.
 }
 \author{
-Emanuele Eccel, Emanuele Cordano, Giambattista Toller
+Emanuele Eccel, Emanuele Cordano, Giambattista Toller, Fabio Zottele
 Maintainer: Emanuele Eccel  <emanuele.eccel@fmach.it>
 }
 \references{
 Allen, R.G., Walter, I.A., Elliott, R.L., Howell, T.A., Itenfisu, D., Jensen, M.E., and Snyder, R.L. (eds.), 2005: ASCE Standardized Reference Evapotranspiration Equation. 216 pp.
+
 Amerine, M.A., and Winkler, A.J., 1944: Composition and quality of musts and wines of California grapes. Hilgardia. 15(6): 493-673.
+
 Bagnouls, F., and Gaussen, H., 1953: Saison seche et indice xerothermique. Docum. pour les Cartes des Prod. Veget. Serie: Generalite, 1 (1953), pp. 1-49.
+
 Conrad, V. 1946: Usual formulas of continentality and their limits of validity. Transactions, American Geophysical Union, Volume 27, Issue 5, p. 663-664
+
 De Martonne E., 1925: Traite de Geographie Physique: 3 tomes, Paris.
+
+Eccel, E., Cordano, E., Zottele, F., Toller, GB., 2015: ClimClass and ClimClassMap: two R- packages for climatic and agro-bioclimatic indices. An application to Trentino. 
+ XVIII National Congress of Agrometeorology, 9-11 June 2015, San Michele all’Adige, Book of Extended Abstract (available from Autors).
+
 Emberger, L., 1955: Une classification biogeographique des climats. Receuil des travaux des laboratoires de botanique, geologie et zoologie de la faculte des sciences de l'universite de Montpellier (Serie Botanique), Fascicule 7, 3-43.
+
 Eynard, I. e Dal Masso, G., 1990: Viticoltura moderna. Manuale pratico. Hoepli Milano. 778 pp.
+
 Fregoni, C., et  Pezzutto, S., 2000: Principes et premieres approches de l'indice bioclimatique de qualite Fregoni, Progr.Agric.Vitic. 117: 390-396.
+
 Gams, H., 1932: Die klimatische Begrenzung von Pflanzenarealen und die Verteilung der hygrischen Kontinentalitaet in den Alpen. Zeitschr. Ges. Erdkunde, Berlin. 
+
 Gladstones, J.S., 2004: Climate and Australian Viticulture. In 'Viticulture. Volume 1-Resources'. (Eds Dry PR, Coombe BG) pp. 90-118.
+
 Huglin, M.P., 1978: Nouveau mode d'evaluation des possibilites heliothermiques d'un milieu viticole. Comptes Rendus de l'Academie de l'Agriculture de France. 64: 1117-1126.
+
 Gorczynski, L., 1920: Sur le calcul du degre de continentalisme et son application dans la climatologie. Geografiska Annaler 2, 324-331.
+
 Hargreaves, G.H., and Samani, Z.A., 1985: Reference crop evapotranspiratin from temperature. Applied Engineering in Agriculture, 1(2):96-99
+
 Lang, R., 1920: Verwitterung und Bodenbildung als Einfuehrung in die Bodenkunde. Schweizerbart Science Publishers, Stuttgart
+
 Lebourgeoise, F., 2010: Cours de bioclimatologie a l'usage des forestiers. Departement SIAFEE, UFR Forets, Arbres et Milieux Naturels. ENGREF, Nancy Cedex.
+
 Lieth, H., Berlekamp, J., Fuest, S., and Riediger, S.: Walter-Lieth: Climate Diagram World Atlas, CD-Series I of Climate and Biosphere, 1st edit.
+
 Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique des montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
+
 Rivas-Martinez: http://www.globalbioclimatics.org/
+
 Rivas-Martinez: http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm
+
 Thornthwaite, C. W., 1948: An Approach toward a Rational Classification of Climate. Geographical Review, Vol. 38, No. 1(Jan.):55-94.
+
 Thornthwaite, C. W., and Mather, J.R., 1955: The water balance.  Publications in Climatology, Volume 8(1), Laboratory of Climatology
+
 Thornthwaite, C. W., and Mather, J.R., 1957: Instructions and tables for computing potential evapotranspiration and the water balance.  Publications in climatology, Volume 10(3), Laboratory of Climatology.
+
 Tonietto, J., and Carbonneau, A., 2004: A multicriteria climatic classification system for grape-growing regions worldwide. Agricultural and Forest Meteorology. 124(1/2): 81-97.
+
 Trewartha, G.T. and Lyle, H.H., 1980: An Introduction to Climate. MacGraw - Hill, 5th Ed. Appendix: Koeppen's Classification of Climates.
+
 UNEP (United Nations Environment Programme), 1997: World atlas of desertification 2ED. UNEP, London
+
 }
 \keyword{"climate classification"}
 \keyword{Koeppen - Geiger}
