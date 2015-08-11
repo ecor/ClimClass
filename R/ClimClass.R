@@ -1,4 +1,4 @@
-#' ClimClass: climate and bio-climate classifications and graphics
+#' climate classification according to several indices
 #'
 #' Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality 
 #' indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing 
@@ -65,7 +65,6 @@
 #' @references Lieth, H., Berlekamp, J., Fuest, S., and Riediger, S.: Walter-Lieth: Climate Diagram World Atlas, CD-Series I of Climate and Biosphere, 1st edit.
 #' @references Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique des montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
 #' @references Rivas-Martinez: \url{http://www.globalbioclimatics.org/}
-#' @references Rivas-Martinez: \url{http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm}
 #' @references Thornthwaite, C. W., 1948: An Approach toward a Rational Classification of Climate. Geographical Review, Vol. 38, No. 1(Jan.):55-94.
 #' @references Thornthwaite, C. W., and Mather, J.R., 1955: The water balance.  Publications in Climatology, Volume 8(1), Laboratory of Climatology
 #' @references Thornthwaite, C. W., and Mather, J.R., 1957: Instructions and tables for computing potential evapotranspiration and the water balance.  Publications in climatology, Volume 10(3), Laboratory of Climatology.

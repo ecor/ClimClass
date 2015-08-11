@@ -59,6 +59,6 @@ datcli <- as.datcli(TrentinoClimateDf,station=station)
 Emanuele Cordano
 }
 \seealso{
-\url{http://www.climatol.eu/}, \url{http://www.zoolex.org/walter.html}
+\url{www.climatol.eu}, \url{http://www.zoolex.org/walter.html}
 }
 

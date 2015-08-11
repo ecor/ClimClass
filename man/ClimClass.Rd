@@ -4,7 +4,7 @@
 \name{ClimClass}
 \alias{ClimClass}
 \alias{ClimClass-package}
-\title{ClimClass: climate and bio-climate classifications and graphics}
+\title{climate classification according to several indices}
 \description{
 Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality
 indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing
@@ -90,8 +90,6 @@ Lieth, H., Berlekamp, J., Fuest, S., and Riediger, S.: Walter-Lieth: Climate Dia
 Michalet, R., and Souchier, B., 1991: Une approche synthetique biopedoclimatique des montagnes mediterraneennes: l'exemple du Maroc septemptrional. Thesis, Univ. J. Fourier, Grenoble, 273 pp
 
 Rivas-Martinez: \url{http://www.globalbioclimatics.org/}
-
-Rivas-Martinez: \url{http://www.iao.florence.it/training/geomatics/BenSlimane/Marocco21_3_1_2.htm}
 
 Thornthwaite, C. W., 1948: An Approach toward a Rational Classification of Climate. Geographical Review, Vol. 38, No. 1(Jan.):55-94.
 
