@@ -1,5 +1,3 @@
-#' climate classification according to several indices
-#'
 #' Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality 
 #' indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing 
 #' climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.

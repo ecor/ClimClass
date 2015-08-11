@@ -1,7 +1,7 @@
 Package: ClimClass
 Type: Package
 Title: Climate Classification According To Several Indices
-Version: 1.1
+Version: 2.0.1
 Date: 2015-08-07
 Authors@R: c(person("Emanuele","Eccel", role=c("aut","cre"), email="emanuele.eccel@fmach.it"),
              person("Emanuele","Cordano", role=c("aut")), 

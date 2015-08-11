@@ -86,10 +86,15 @@ Emanuele Eccel
 }
 \references{
 Amerine, M.A., and Winkler, A.J., 1944. Composition and quality of musts and wines of California grapes. Hilgardia. 15(6): 493-673.
+
 Eynard, I. e Dal Masso, G., 1990: Viticoltura moderna. Manuale pratico. Hoepli Milano. 778 pp.
+
 Fregoni, C., et  Pezzutto, S., 2000 : Principes et premieres approches de l'indice bioclimatique de qualite Fregoni, Progr.Agric.Vitic. 117: 390-396.
+
 Gladstones, J.S., 2004: Climate and Australian Viticulture. In 'Viticulture. Volume 1-Resources'. (Eds Dry PR, Coombe BG) pp. 90-118.
+
 Huglin, M.P., 1978: Nouveau mode d'evaluation des possibilites heliothermiques d'un milieu viticole. Comptes Rendus de l'Academie de l'Agriculture de France. 64: 1117-1126.
+
 Tonietto, J., and Carbonneau, A., 2004. A multicriteria climatic classification system for grape-growing regions worldwide. Agricultural and Forest Meteorology. 124(1/2): 81-97.
 }
 \seealso{

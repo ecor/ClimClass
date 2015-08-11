@@ -4,7 +4,9 @@
 \name{ClimClass}
 \alias{ClimClass}
 \alias{ClimClass-package}
-\title{climate classification according to several indices}
+\title{Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality
+indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing
+climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.}
 \description{
 Classification of climate according to Koeppen - Geiger, of aridity indices, of continentality
 indices, of water balance after Thornthwaite, of viticultural bioclimatic indices. Drawing
@@ -15,16 +17,20 @@ climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.
 The \code{\link{koeppen_geiger}} function performs the Koeppen - Geiger's classification, as
 described in Trewartha (1980).  Almost all sub-classes have been considered, with the only
 exception of those whose attribution is based on qualitative assessment of climatic features.
+
 The package collects several criteria for climate classification. The most general is , implemented in function
 A classic graphical visualization of temperature and precipitation, according to Bagnouls and
 Gaussen (1953), is provided by function \code{\link{bagn_gau}}. A similar, but more sophisticated
 representation of the same variable, is that of Walter - Lieth (Lieth et al., CD). This
 function is implemented in library \code{climatol} (http://www.climatol.eu/).
+
 The Function \code{\link{arid}} calculates a set of six annual aridity indices (Emberger, 1955;
 Lang, R., 1920; Rivas - Martinez, (website); and UNEP, 1997; De Martonne, 1925; Thornthwaite,
 1948). For the latter two also a monthly index is calculated.
+
 A set of four continentality indices is proposed by function \code{\link{contin}} (Gorczynski,
 L., 1920; Conrad, 1946; Gams, 1932; Rivas - Martinez, web page).
+
 Thornthwaite's method for the assessment of soil water balance (Thornthwaite, 1948;
 Thornthwaite and Mather, 1955; Thornthwaite and Mather, 1957) makes use of monthly series to
 calculate the main quantities in water balance: evapotranspiration, soil water deficit, soil
@@ -34,14 +40,18 @@ function \code{\link{plot}} manages the plot of the quantiles of the relevant qu
 The assessment of potential evapotranspiration by Thornthwaite and Mather's algorithm requires
 the estimation of extra-atmospheric radiation, which is calculated by function
 \code{\link{ExAtRa}}, based on the algorithm of Allen et al., 2005.
+
 The Function \code{\link{as.datcli}} tranforms a data frame as in example dataset
 \code{\link{Trent_climate}} into a data frame format like \code{datcli} in \code{climatol}
 package. It can be used to plot Walter - Lieth's climographs (see examples documentation).
+
 The Function \code{\link{oiv_ind}} calculates several bioclimatic indices for viticulture
 proposed by the International Organization of Viticuture, OIV (Resolution OIV-VITI 423-2012),
 plus one index (Branas).
+
 One index of OIV's list, Riou's drought index, needing daily series, is calculated by another
 function, \code{\link{RDI}}.
+
 The data set included in the library is formed by monthly and daily time series of temperature
 and precipitation from Trentino, Italy (courtesy of Autonomous Province of Trento -
 Meteotrentino, and of Fondazione Edmund Mach, San Michele all'Adige). Climatic normals are
