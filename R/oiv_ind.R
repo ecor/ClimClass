@@ -54,7 +54,7 @@ NULL
 #' \code{Tn_veg}, and \code{Tx_veg}, respectfully. 0.5 (default) is the median year, 0 is the minimum (lowest temperature), 1 is the maximum (highest temperature).
 #'  
 #' The only missing index among those selected by OIV is Riou's Drought Index, which is calculated by function \code{RDI} on monthly series.
-
+#' @importFrom stats aggregate
 #' @export
 #' 
 #' @references Amerine, M.A., and Winkler, A.J., 1944. Composition and quality of musts and wines of California grapes. Hilgardia. 15(6): 493-673.

@@ -14,6 +14,7 @@ NULL
 #' @param ... arguments to be passed to methods, such as graphical parameters (see \code{\link{par}}).
 #' 
 #' @method plot thornthwaite
+#' @importFrom graphics legend
 #' @export
 #' 
 #' @title Thornthwaite - Mather's quantile plot

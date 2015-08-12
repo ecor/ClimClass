@@ -1,6 +1,6 @@
 Package: ClimClass
 Type: Package
-Title: Climate Classification According To Several Indices
+Title: Climate Classification According to Several Indices
 Version: 2.0.1
 Date: 2015-08-07
 Authors@R: c(person("Emanuele","Eccel", role=c("aut","cre"), email="emanuele.eccel@fmach.it"),
@@ -12,7 +12,7 @@ Description: Classification of climate according to Koeppen - Geiger, of
     Thornthwaite. Drawing climographs: Thornthwaite, Peguy, Bagnouls-Gaussen.
 License: GPL (>= 2)
 Depends:
-    R(>= 2.10.0),geosphere,ggplot2,reshape2
+    R(>= 2.10.0),geosphere,ggplot2,reshape2, utils
 Suggests:
     stringr
 LazyData: true

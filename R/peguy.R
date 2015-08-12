@@ -26,12 +26,10 @@ NULL
 #'
 #' @author Emanuele Cordano
 #' @import ggplot2 reshape2
-# @docType function
-
-
+#' 
 #' @references Peguy, C.P. (1970) Precis de climatologie, ed. Masson, Paris.
-#'
-#'  @export
+#' @importFrom grDevices rainbow
+#' @export
 #' 
 #' @examples
 #' 
