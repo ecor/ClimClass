@@ -123,7 +123,7 @@ oiv_ind<-function (daily_Tn=NULL,daily_Tx=NULL,daily_Tm=NULL, daily_P=NULL, firs
     
     
     # checks S or N emisphere (T in July <> T in Jaunary) and sets periods
-    S_emisph <- mean(colMeans(daily_Tm[daily_Tm$month==1,-(1:3)], na.rm=T), na.rm=T) > mean(colMeans(daily_Tm[daily_Tm$month==7,-(1:3)], na.rm=T), na.rm=T)
+    S_emisph <- mean(colMeans(as.data.frame(daily_Tm[daily_Tm$month==1,-(1:3)]), na.rm=T), na.rm=T) > mean(colMeans(as.data.frame(daily_Tm[daily_Tm$month==7,-(1:3)]), na.rm=T), na.rm=T)
     if(S_emisph) index_months<-c(10:12, 1:4) else index_months<-4:10
     
     # filters series by index months
