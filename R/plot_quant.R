@@ -14,10 +14,8 @@ NULL
 #' @param ... arguments to be passed to methods, such as graphical parameters (see \code{\link{par}}).
 #' 
 #' @method plot thornthwaite
-#' @export plot thornthwaite
-#' @aliases plot plot.thornthwaite
-#' 
-#' 
+#' @importFrom graphics legend
+#' @export
 #' 
 #' @title Thornthwaite - Mather's quantile plot
 #' 
@@ -38,7 +36,6 @@ NULL
 #' 
 #' @note A conflict is generated if parameters already used by the function are passed (e.g. x for \code{\link{legend}}: use \code{leg_pos} instead).
 #' 
-#' @export
 #' 
 #' @examples 
 #' 

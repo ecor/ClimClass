@@ -17,7 +17,7 @@ NULL
 #' @author Emanuele Cordano
 #' 
 #' @export
-#' @seealso \url{http://www.climatol.eu/}, \url{http://www.zoolex.org/walter.html}
+#' @seealso \url{www.climatol.eu}, \url{http://www.zoolex.org/walter.html}
 #' 
 #' @examples 
 #' 

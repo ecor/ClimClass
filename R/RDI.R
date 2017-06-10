@@ -43,7 +43,7 @@ NULL
 #' humid or sub-humid climates the driest period for soil generally falls in summer. For this reason, the output table reports 
 #' both cases ("harvest" time value and monthly minimum over the season, "WB_harv" and "WB_min", respectfully). Harvest time is 
 #' conventionally September (N emisphere) or March (S emisphere).
-
+#' @importFrom stats quantile
 #' @export
 #' 
 #' @references

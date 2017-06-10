@@ -29,7 +29,8 @@ NULL
 #' Most graphic parameters for functions \code{\link{plot}}, \code{\link{axis}}, and \code{\link{mtext}} are accepted.
 #' 
 #' @note A conflict is generated if parameters already used by the function are passed (e.g. \code{col} - use \code{col.main}, \code{col.axis}, ..., instead).
-#' 
+#' @importFrom grDevices png jpeg tiff bmp dev.off
+#' @importFrom graphics plot lines axis mtext abline grid
 #' @export
 #' 
 #' @examples

@@ -17,6 +17,7 @@ NULL
 #' 
 #' If \code{first.yr} or  \code{last.yr} are NULL (default), the lowest and highest values in series are taken as the period.
 #' 
+#' @importFrom stats aggregate
 #' @export
 #' 
 #' 
